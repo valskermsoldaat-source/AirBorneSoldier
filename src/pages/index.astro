@@ -1,0 +1,100 @@
+---
+import "../styles/global.css";
+const categories = [
+  { number: "01", name: "T-shirts", note: "The everyday standard", mark: "TEE" },
+  { number: "02", name: "Hoodies", note: "Built for the in-between", mark: "HD" },
+  { number: "03", name: "Sweatshirts", note: "Quiet confidence", mark: "SW" },
+  { number: "04", name: "Accessories", note: "The finishing detail", mark: "ACC" },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="AirBorneSoldier — Sky Brotherhood. Premium heritage streetwear." />
+    <meta name="theme-color" content="#11120f" />
+    <title>AirBorneSoldier — Sky Brotherhood</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="AirBorneSoldier home">
+        <span class="brand-symbol">A<span>／</span>S</span>
+        <span class="brand-name">AIRBORNE<span>SOLDIER</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#collection">Collection</a>
+        <a href="#story">Our code</a>
+        <a class="nav-contact" href="mailto:valskermsoldaat@gmail.com">Get in touch <span>↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-grain"></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> EST. IN THE SPIRIT OF BROTHERHOOD</p>
+          <h1>BUILT ON<br /><em>BELONGING.</em></h1>
+          <p class="hero-intro">Not just what you wear.<br />A standard you carry.</p>
+          <a class="primary-link" href="#collection">EXPLORE THE COLLECTION <span>↘</span></a>
+        </div>
+        <div class="hero-side-note">SKY BROTHERHOOD <span>—</span> UK · EUROPE · USA</div>
+        <div class="hero-index">01 <span>/</span> 04</div>
+      </section>
+
+      <section class="manifesto" id="story">
+        <p class="eyebrow">THE AIRBORNESOLDIER CODE</p>
+        <p class="manifesto-line">A shared spirit.<br /><span>A higher standard.</span></p>
+        <p class="manifesto-detail">Sky Brotherhood is a mark of connection, resilience and quiet confidence. Heritage-inspired pieces, stripped back to what matters.</p>
+      </section>
+
+      <section class="collection" id="collection">
+        <div class="section-heading">
+          <div><p class="eyebrow">THE STARTING LINE</p><h2>THE COLLECTION</h2></div>
+          <p>FOUR FOUNDATIONS <span>／</span> NO SHORTCUTS</p>
+        </div>
+        <div class="category-grid">
+          {categories.map((item) => (
+            <a class="category-card" href="mailto:valskermsoldaat@gmail.com?subject=AirBorneSoldier%20collection%20enquiry">
+              <div class="category-art"><span class="art-index">{item.number}</span><span class="art-mark">{item.mark}</span><span class="art-arrow">↗</span></div>
+              <div class="category-meta"><div><h3>{item.name}</h3><p>{item.note}</p></div><span>ENQUIRE ↗</span></div>
+            </a>
+          ))}
+        </div>
+        <p class="collection-note">THE FIRST DROP IS IN DEVELOPMENT. JOIN THE CONVERSATION.</p>
+      </section>
+
+      <section class="closing">
+        <p class="eyebrow">SKY BROTHERHOOD</p>
+        <h2>STAND FOR<br /><em>SOMETHING.</em></h2>
+        <a href="mailto:valskermsoldaat@gmail.com?subject=AirBorneSoldier%20updates" class="primary-link">CONTACT THE BRAND <span>↗</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <a class="footer-brand" href="/">AIRBORNESOLDIER<span>®</span></a>
+      <p>PREMIUM HERITAGE STREETWEAR · SKY BROTHERHOOD</p>
+      <p>© {new Date().getFullYear()} AIRBORNESOLDIER</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-header{height:82px;padding:0 6.5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff18;background:#11120f;position:relative;z-index:2}
+  .wordmark{display:flex;align-items:center;gap:12px}.brand-symbol{font-family:Georgia,serif;font-size:19px;border:1px solid #c4a46b;color:#c4a46b;padding:8px 7px;letter-spacing:-3px}.brand-symbol span{font-size:11px}.brand-name{font-size:11px;font-weight:800;letter-spacing:2px}.brand-name span{display:block;color:#aaa69c;font-size:9px;letter-spacing:3px;margin-top:3px}
+  nav{display:flex;gap:36px;align-items:center;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:#c9c5bc}nav a:hover{color:#c4a46b}.nav-contact{border:1px solid #ffffff45;padding:12px 15px}.nav-contact span{color:#c4a46b;margin-left:12px}
+  .hero{min-height:690px;height:calc(100vh - 82px);max-height:900px;position:relative;overflow:hidden;display:flex;align-items:center;padding:7% 12%;background:radial-gradient(ellipse at 72% 48%,#4d493b 0%,#292a24 23%,#171914 54%,#11120f 78%)}
+  .hero:after{content:"";position:absolute;width:52vw;height:52vw;max-width:720px;max-height:720px;border:1px solid #c4a46b33;border-radius:50%;right:5%;top:8%;box-shadow:0 0 0 35px #c4a46b08,0 0 0 90px #c4a46b06}
+  .hero-grain{position:absolute;inset:0;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E")}
+  .hero-copy{position:relative;z-index:1}.eyebrow{font-size:9px;letter-spacing:3px;color:#c4a46b;font-weight:700}.hero .eyebrow span{display:inline-block;width:24px;height:1px;background:#c4a46b;vertical-align:middle;margin-right:10px}
+  h1,h2,p{margin-top:0}.hero h1{font-size:clamp(64px,9vw,132px);line-height:.86;letter-spacing:-7px;margin:34px 0 28px;font-weight:900}.hero h1 em,.closing h2 em{font-family:Georgia,serif;font-weight:400;color:#c4a46b;letter-spacing:-5px}
+  .hero-intro{font-family:Georgia,serif;font-size:20px;line-height:1.55;color:#c4c0b7;margin-bottom:38px}.primary-link{display:inline-flex;gap:40px;align-items:center;border:1px solid #c4a46b;padding:17px 20px;font-size:9px;letter-spacing:2px;font-weight:700;color:#e9e5dc}.primary-link span{font-size:17px;color:#c4a46b}.primary-link:hover{background:#c4a46b;color:#11120f}.primary-link:hover span{color:#11120f}
+  .hero-side-note{position:absolute;right:5%;top:50%;writing-mode:vertical-rl;font-size:8px;letter-spacing:3px;color:#aaa69c}.hero-side-note span{color:#c4a46b;padding:12px 0}.hero-index{position:absolute;bottom:35px;right:6.5%;font-size:10px;letter-spacing:2px}.hero-index span{color:#c4a46b;padding:0 8px}
+  .manifesto{padding:120px 15%;text-align:center;background:#e9e5dc;color:#171914}.manifesto .eyebrow{color:#85704b}.manifesto-line{font:clamp(35px,5vw,64px)/1.1 Georgia,serif;letter-spacing:-2px;margin:35px 0 22px}.manifesto-line span{color:#8d7650;font-style:italic}.manifesto-detail{max-width:480px;margin:0 auto;color:#656158;font:16px/1.8 Georgia,serif}
+  .collection{padding:110px 8% 120px}.section-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:42px}.section-heading h2{font-size:clamp(30px,4vw,48px);letter-spacing:-2px;margin:15px 0 0}.section-heading>p{font-size:8px;letter-spacing:2px;color:#aaa69c}.section-heading>p span{color:#c4a46b}
+  .category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.category-card{min-width:0}.category-art{height:300px;background:linear-gradient(145deg,#34362e,#1d201b);border:1px solid #ffffff14;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.category-art:before{content:"";position:absolute;width:180px;height:180px;border:1px solid #c4a46b45;border-radius:50%;box-shadow:0 0 0 20px #c4a46b08,0 0 0 45px #c4a46b06}.art-mark{font:italic 54px Georgia,serif;color:#c4a46b;letter-spacing:-3px}.art-index{position:absolute;top:17px;left:17px;font-size:9px;color:#aaa69c;letter-spacing:2px}.art-arrow{position:absolute;right:17px;bottom:14px;color:#c4a46b;font-size:19px}.category-meta{display:flex;justify-content:space-between;align-items:center;padding:18px 2px;border-bottom:1px solid #ffffff30}.category-meta h3{font-size:16px;margin:0 0 5px}.category-meta p{font:12px Georgia,serif;color:#aaa69c;margin:0}.category-meta>span{font-size:8px;letter-spacing:1px;color:#c4a46b}.collection-note{text-align:center;margin:45px 0 0;font-size:8px;letter-spacing:2px;color:#aaa69c}
+  .closing{padding:105px 12%;background:#25271f;text-align:center}.closing h2{font-size:clamp(48px,7vw,88px);line-height:.9;letter-spacing:-4px;margin:28px 0 35px}.closing h2 em{letter-spacing:-3px}
+  footer{padding:28px 6.5%;display:flex;align-items:center;justify-content:space-between;color:#8d8a81;font-size:8px;letter-spacing:1.4px}footer p{margin:0}.footer-brand{font-weight:800;color:#e9e5dc;font-size:11px;letter-spacing:2px}.footer-brand span{color:#c4a46b;margin-left:3px}
+  @media(max-width:760px){.site-header{height:70px;padding:0 5%}nav{gap:14px;font-size:8px}nav a:nth-child(2){display:none}.nav-contact{padding:10px}.hero{height:680px;min-height:0;padding:12% 7%;align-items:center}.hero:after{width:90vw;height:90vw;right:-25%;top:20%}.hero h1{font-size:clamp(60px,14vw,100px);letter-spacing:-4px}.hero h1 em{letter-spacing:-3px}.hero-side-note{right:4%;font-size:7px}.manifesto{padding:85px 8%}.collection{padding:80px 6%}.section-heading{display:block}.section-heading>p{margin-top:20px}.category-grid{grid-template-columns:repeat(2,1fr);gap:22px 12px}.category-art{height:230px}.category-meta{display:block}.category-meta>span{display:block;margin-top:12px}footer{gap:14px;flex-wrap:wrap}footer p:last-child{width:100%}}
+  @media(max-width:390px){.brand-name{font-size:9px}.nav-contact{font-size:7px}.category-art{height:185px}}
+</style>
