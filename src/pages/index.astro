@@ -1,10 +1,7 @@
 ---
 import "../styles/global.css";
-const products = [
- {name:"The Standard Tee",type:"Heavyweight cotton · Relaxed fit",price:"£32",tag:"CORE PIECE",image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1100&q=85"},
- {name:"Brotherhood Hoodie",type:"Premium fleece · Everyday layer",price:"£68",tag:"SIGNATURE",image:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1100&q=85"},
- {name:"Field Crew",type:"Midweight fleece · Clean profile",price:"£56",tag:"ESSENTIAL",image:"https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=1100&q=85"}
-];
+import { products } from "../data/products";
+
 const values = [
  {number:"01",title:"Belonging",text:"A shared spirit. A place in the brotherhood. No noise, no posturing."},
  {number:"02",title:"Resilience",text:"Made for the long road. The quiet discipline to keep moving forward."},
@@ -33,7 +30,7 @@ const values = [
 <div class="hero-caption"><span>01 — 03</span><span>THE FIRST CHAPTER</span></div><div class="vertical-note">AIRBORNE SOLDIER · SKY BROTHERHOOD</div></section>
 <section class="intro-band" id="story"><div class="intro-kicker">MORE THAN A MARK <span>／</span> A WAY OF CARRYING YOURSELF</div><p>For those who know that <em>belonging</em><br class="desktop-break" /> is earned through how you live.</p><span class="intro-seal">A／S</span></section>
 <section class="featured section-wrap" id="collection"><div class="section-top"><div><p class="eyebrow">THE FIRST CHAPTER</p><h2>FOUNDATIONS<br /><em>OF THE BROTHERHOOD.</em></h2></div><a class="underlined-link" href="/collection/">VIEW THE COLLECTION <span>↗</span></a></div>
-<div class="product-grid">{products.map((product,index)=><a class="product-card" href="/collection/"><div class="product-image"><img src={product.image} alt={product.name} loading="lazy" /><span class="product-tag">{product.tag}</span><span class="product-number">0{index+1}</span><span class="product-quick">DISCOVER PIECE ↗</span></div><div class="product-info"><div><h3>{product.name}</h3><p>{product.type}</p></div><span class="price">{product.price}</span></div></a>)}</div>
+<div class="product-grid">{products.map((product,index)=><a class="product-card" href={"/collection/" + products[index].slug + "/"}><div class="product-image"><img src={product.image} alt={product.name} loading="lazy" /><span class="product-tag">{product.tag}</span><span class="product-number">0{index+1}</span><span class="product-quick">VIEW DETAILS ↗</span></div><div class="product-info"><div><h3>{product.name}</h3><p>{product.type}</p></div><span class="price">{product.price}</span></div></a>)}</div>
 <p class="drop-note"><span>✳</span> THE FIRST DROP IS IN DEVELOPMENT. JOIN US AT THE START.</p></section>
 <section class="manifesto" id="philosophy"><div class="manifesto-image"></div><div class="manifesto-panel"><p class="eyebrow">THE AIRBORNESOLDIER CODE</p><h2>A SHARED SPIRIT.<br /><em>A HIGHER STANDARD.</em></h2><p class="manifesto-copy">Sky Brotherhood is a mark of connection, resilience and quiet confidence. Heritage-inspired pieces, stripped back to what matters. Made to be worn often, kept for longer, and carried with intent.</p><a class="button button-outline" href="mailto:valskermsoldaat@gmail.com?subject=The%20AirBorneSoldier%20Code">GET TO KNOW US <span>↗</span></a></div></section>
 <section class="values section-wrap"><div class="section-top values-heading"><div><p class="eyebrow">WHAT WE STAND FOR</p><h2>THE CODE.</h2></div><p class="values-aside">THREE PRINCIPLES.<br />ONE BROTHERHOOD.</p></div><div class="values-grid">{values.map(value=><article class="value-card"><span>{value.number}</span><h3>{value.title}</h3><p>{value.text}</p></article>)}</div></section>
