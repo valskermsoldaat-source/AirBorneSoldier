@@ -22,7 +22,7 @@ const related = products.filter((item) => item.slug !== product.slug).slice(0, 3
   <div class="topline">THE SKY BROTHERHOOD — BUILT ON BELONGING <span>✳</span> UK · EUROPE · USA</div>
   <header class="header">
     <a class="logo" href="/" aria-label="AirBorneSoldier home"><img class="brand-image" src="https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw25su/c14fa22d-dcdf-4531-ac68-c193884954df.png" alt="AirBorneSoldier — The Sky Brotherhood" /></a>
-    <nav><a href="/">HOME</a><a href="/collection/">COLLECTION</a><a href="/#story">OUR STORY</a><a href="mailto:valskermsoldaat@gmail.com">CONTACT</a></nav><a class="header-cta" href="mailto:valskermsoldaat@gmail.com?subject=AirBorneSoldier%20early%20access">GET EARLY ACCESS <span>↗</span></a>
+    <nav><a href="/">HOME</a><a href="/collection/">COLLECTION</a><a href="/#story">OUR STORY</a><a href="mailto:valskermsoldaat@gmail.com">CONTACT</a></nav><a class="header-cta" href="mailto:valskermsoldaat@gmail.com?subject=AirBorneSoldier%20early%20access">SHOP THE COLLECTION <span>→</span></a>
   </header>
   <main>
     <div class="breadcrumbs"><a href="/">HOME</a><span>/</span><a href="/collection/">COLLECTION</a><span>/</span><span>{product.name.toUpperCase()}</span></div>
@@ -146,4 +146,23 @@ footer a:first-child{color:#f0ece2}
 @media(max-width:900px){.header{height:auto!important;min-height:112px!important;padding:8px 4%!important;gap:12px!important}.header .logo{flex:0 1 270px!important;min-width:160px!important}.header .brand-image{max-height:100px!important}.header nav{gap:12px!important}.header nav a{font-size:9px!important}.header-cta{font-size:8px;padding:10px}}
 @media(max-width:650px){.topline{height:34px!important;font-size:7px!important;letter-spacing:1.4px!important;gap:8px!important}.header{height:100px!important;min-height:100px!important;padding:6px 12px!important;flex-wrap:nowrap!important}.header .logo{flex:0 1 190px!important;min-width:0!important}.header .brand-image{max-height:86px!important}.header nav{display:none!important}.header-cta{margin-left:auto;font-size:7px;padding:10px 8px;gap:7px}.product-layout{padding-top:12px!important}.main-image{min-height:0!important;height:105vw!important}}
 @media(max-width:390px){.header .logo{flex-basis:160px!important}.header-cta{font-size:6px;padding:9px 6px}}
+</style>
+<style>
+/* Consistent cream-and-gold AirBorneSoldier storefront */
+.topline{height:40px!important;background:linear-gradient(90deg,#b28a4b,#d5b77f,#b28a4b)!important;color:#171914!important}
+.header{height:142px!important;min-height:142px!important;padding:8px clamp(28px,5vw,78px)!important;background:#f8f4ec!important;border-bottom:1px solid #d5c8b3!important}
+.header .logo{flex:0 1 390px!important;min-width:220px!important}
+.header .brand-image{width:100%!important;max-width:390px!important;max-height:136px!important;filter:drop-shadow(0 2px 2px #4b3a1b22)!important}
+.header nav,.header nav a{color:#171914!important}
+.header-cta{background:linear-gradient(110deg,#e6c47e,#b88a3e)!important;border:1px solid #d4a64d!important;color:#171914!important;padding:14px 18px!important;font-size:9px!important}
+.breadcrumbs{background:#f7f2e9!important;color:#756b59!important}
+.product-layout{background:#f7f2e9!important}
+.main-image{background:#d8d0c2!important}
+.product-copy h1{color:#171914!important}
+.price,.product-copy .eyebrow{color:#98703a!important}
+.notify-button{background:linear-gradient(110deg,#e6c47e,#b88a3e)!important;border:1px solid #d4a64d!important;color:#171914!important;box-shadow:0 4px 14px #6e4b1b22!important}
+.size-list span{border-color:#c9bda9!important;color:#292820!important}
+.more{background:#eee8dc!important}
+.related-card img{filter:saturate(.9)!important}
+@media(max-width:760px){.topline{height:34px!important;font-size:7px!important}.header{height:98px!important;min-height:98px!important;padding:6px 12px!important}.header .logo{max-width:210px!important;min-width:0!important}.header .brand-image{max-height:84px!important}.header nav{display:none!important}.header-cta{font-size:7px!important;padding:10px 8px!important}.product-layout{padding:18px 5% 60px!important}}
 </style>
