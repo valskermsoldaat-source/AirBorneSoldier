@@ -5,7 +5,7 @@ const categories = [
   { name: "HOODIES", note: "Layers for the brotherhood", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=88", number: "01" },
   { name: "T-SHIRTS", note: "The everyday standard", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=88", number: "02" },
   { name: "CAPS", note: "The finishing mark", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=1200&q=88", number: "03" },
-  { name: "OUTERWEAR", note: "A new chapter in development", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1200&q=88", number: "04" }
+  { name: "JACKETS", note: "Built for the elements", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1200&q=88", number: "04" }
 ];
 const logo = "https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw25su/c14fa22d-dcdf-4531-ac68-c193884954df.png";
 ---
@@ -24,7 +24,7 @@ const logo = "https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw
   <div class="topline">
     <span class="topline-rule"></span>
     <span>THE SKY BROTHERHOOD — BUILT ON BELONGING</span>
-    <span class="topline-star">✳</span>
+    
     <span class="topline-markets">UK · EUROPE · USA</span>
     <span class="topline-rule"></span>
   </div>
@@ -40,13 +40,13 @@ const logo = "https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw
       <a href="#journal">JOURNAL</a>
       <a href="mailto:valskermsoldaat@gmail.com">CONTACT</a>
     </nav>
-    <a class="header-cta" href="mailto:valskermsoldaat@gmail.com?subject=AirBorneSoldier%20early%20access">GET EARLY ACCESS <span>↗</span></a>
+    <a class="header-cta" href="/collection/">SHOP THE COLLECTION <span>→</span></a><a class="header-utility" href="/collection/" aria-label="View collection">⌕</a><a class="header-utility header-bag" href="/collection/" aria-label="Browse products">◯</a>
     <a class="mobile-collection" href="/collection/">COLLECTION ↗</a>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-photo" role="img" aria-label="A paratrooper descending beneath a traditional round T-10D military parachute canopy"></div>
+      <div class="hero-photo" role="img" aria-label="Traditional round military parachutes descending over a mountain drop zone"></div>
       <div class="hero-overlay"></div>
       <div class="hero-copy">
         <p class="eyebrow"><span></span> AIRBORNE SOLDIER</p>
@@ -74,6 +74,7 @@ const logo = "https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw
           <a class={`category-card category-card--${category.number}`} href="/collection/">
             <img class="category-photo" src={category.image} alt={category.name + " apparel preview"} loading="lazy" />
             <span class="category-shade"></span>
+            <img class="category-brand" src={logo} alt="" aria-hidden="true" />
             <span class="category-number">{category.number}</span>
             <span class="category-caption"><span><b>{category.name}</b><small>{category.note}</small></span><strong>→</strong></span>
           </a>
@@ -242,5 +243,55 @@ a{color:inherit;text-decoration:none}
  .category-card{height:250px}
  .category-caption b{font-size:14px}
  .value-symbol svg{width:34px;height:34px}
+}
+</style>
+
+<style>
+/* AirBorneSoldier — generated visual direction */
+.topline{height:40px;background:linear-gradient(90deg,#b28a4b,#d5b77f,#b28a4b);letter-spacing:4px;color:#151611}
+.topline-star{display:none}
+.masthead{height:142px;padding:8px clamp(28px,5vw,78px);background:#f8f4ec}
+.brand{flex-basis:390px}
+.brand img{max-height:136px}
+.main-nav{gap:clamp(20px,3vw,48px)}
+.main-nav a{font-size:13px;letter-spacing:1px}
+.header-cta{background:linear-gradient(110deg,#e6c47e,#b88a3e);border:1px solid #d4a64d;box-shadow:0 4px 14px #6e4b1b22;padding:15px 21px;font-size:11px}
+.header-utility{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border:1px solid #c9b99d;border-radius:50%;font-size:23px;color:#25251f}
+.header-bag{font-size:18px}
+.hero{height:clamp(470px,37vw,570px);min-height:470px}
+.hero h1{font-size:clamp(58px,6vw,88px);letter-spacing:-2.5px}
+.hero-copy{margin-left:8.6%}
+.hero-subtitle{letter-spacing:5px}
+.gold-button{background:linear-gradient(110deg,#e4bd6b,#b17a29);border:1px solid #f0cf85;box-shadow:0 5px 16px #0005;min-width:325px}
+.values-strip{padding:23px 6%;background:#f8f3e9}
+.values-strip article{gap:20px}
+.value-symbol{color:#7d551b}
+.featured{padding:32px 4.5% 58px;background:#f7f2e9}
+.section-heading{gap:26px;margin-bottom:25px}
+.section-heading h2{letter-spacing:7px}
+.category-grid{gap:8px}
+.category-card{height:clamp(220px,19vw,300px);background:#292922}
+.category-photo{filter:saturate(.9) contrast(1.05)}
+.category-brand{position:absolute;width:54%;max-height:112px;object-fit:contain;left:50%;top:48%;transform:translate(-50%,-50%);z-index:2;filter:drop-shadow(0 2px 4px #000b)}
+.category-card--01 .category-brand{width:56%;left:50%;top:48%}
+.category-card--02 .category-brand{width:43%;left:55%;top:46%}
+.category-card--03 .category-brand{width:62%;left:50%;top:49%}
+.category-card--04 .category-brand{width:43%;left:55%;top:45%}
+.category-caption{left:20px;right:18px;bottom:17px}
+.category-caption b{font-size:18px;letter-spacing:2px}
+.category-caption strong{font-size:34px}
+@media(max-width:1050px){.header-utility{display:none}}
+@media(max-width:760px){
+ .topline{height:34px;font-size:7px;letter-spacing:2px}
+ .masthead{height:98px;padding:6px 12px}
+ .brand{max-width:210px}
+ .brand img{max-height:84px}
+ .header-cta{font-size:8px;padding:10px 9px;min-width:0}
+ .hero{height:550px;min-height:0}
+ .hero h1{font-size:clamp(45px,10vw,66px)}
+ .gold-button{min-width:270px;font-size:11px}
+ .category-card{height:230px}
+ .category-brand{max-height:76px}
+ .category-caption b{font-size:13px}
 }
 </style>
