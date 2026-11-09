@@ -1,450 +1,54 @@
 ---
 import "../styles/global.css";
-import { products as countryCollections } from "../data/products";
-
-const categories = [
-  { name: "T-SHIRTS", note: "The everyday standard", image: "https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?auto=format&fit=crop&w=1200&q=88", number: "01" },
-  { name: "HOODIES", note: "Layers for the brotherhood", image: "https://images.unsplash.com/photo-1620532393942-ceb8baf5f8a0?auto=format&fit=crop&w=1200&q=88", number: "02" },
-  { name: "SWEATSHIRTS", note: "The heritage layer", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=88", number: "03" },
-  { name: "CAPS", note: "The finishing mark", image: "https://images.unsplash.com/photo-1544435253-f0ead49638fa?auto=format&fit=crop&w=1200&q=88", number: "04" }
-];
-const logo = "https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw25su/c14fa22d-dcdf-4531-ac68-c193884954df.png";
+import { countries, garmentCategories } from "../data/products";
+const logo = "/images/airbornesoldier-logo.svg";
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AirBorneSoldier — premium heritage streetwear for the global airborne community. The Sky Brotherhood. Built on belonging." />
-  <meta name="theme-color" content="#eee9df" />
-  <meta property="og:title" content="AirBorneSoldier — The Sky Brotherhood" />
-  <meta property="og:description" content="Heritage streetwear for the airborne community. Built on belonging." />
+  <meta name="description" content="AirBorneSoldier — The Sky Brotherhood. Premium airborne heritage streetwear, built on belonging." />
+  <meta name="theme-color" content="#171914" />
   <title>AirBorneSoldier® — The Sky Brotherhood</title>
 </head>
 <body>
-  <div class="topline">
-    <span class="topline-rule"></span>
-    <span>THE SKY BROTHERHOOD — BUILT ON BELONGING</span>
-    
-    <span class="topline-markets">UK · EUROPE · USA</span>
-    <span class="topline-rule"></span>
-  </div>
-
-  <header class="masthead">
-    <a class="brand" href="/" aria-label="AirBorneSoldier home">
-      <img src={logo} alt="AirBorneSoldier — The Sky Brotherhood" />
-    </a>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a class="active" href="/">HOME</a>
-      <a href="/collection/">COLLECTION <span class="chevron">⌄</span></a>
-      <a href="#story">OUR STORY</a>
-      <a href="#journal">JOURNAL</a>
-      <a href="mailto:valskermsoldaat@gmail.com">CONTACT</a>
-    </nav>
-    <a class="header-cta" href="/collection/">SHOP THE COLLECTION <span>→</span></a><a class="header-utility" href="/collection/" aria-label="View collection">⌕</a><a class="header-utility header-bag" href="/collection/" aria-label="Browse products">◯</a>
-    <a class="mobile-collection" href="/collection/">COLLECTION ↗</a>
+  <div class="announcement">THE SKY BROTHERHOOD <span>—</span> BUILT ON BELONGING</div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="AirBorneSoldier home"><img src={logo} alt="AirBorneSoldier" /></a>
+    <nav aria-label="Main navigation"><a class="current" href="/">Home</a><a href="/collection/">Collection</a><a href="#story">Our story</a><a href="mailto:valskermsoldaat@gmail.com">Contact</a></nav>
+    <a class="nav-cta" href="/collection/">Explore collection <span>↗</span></a>
   </header>
-
   <main>
     <section class="hero">
-      <div class="hero-photo" role="img" aria-label="Traditional round military parachutes descending over a mountain drop zone"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-copy">
-        <p class="eyebrow"><span></span> AIRBORNE SOLDIER</p>
-        <h1>THE SKY<br /><em>BROTHERHOOD.</em></h1>
-        <p class="hero-subtitle">HERITAGE STREETWEAR FOR<br />THE AIRBORNE COMMUNITY</p>
-        <div class="hero-rule"></div>
-        <a class="gold-button" href="/collection/">SHOP THE COLLECTION <b>→</b></a>
-        <p class="hero-footnote">PAST · PRESENT · FUTURE</p>
-      </div>
-      <div class="hero-side-note">BUILT ON BELONGING · EST. IN SPIRIT</div>
-      <div class="hero-index">CHAPTER 01 <span>／</span> THE FIRST DROP</div>
+      <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="ridge ridge-back"></div><div class="ridge ridge-front"></div><div class="canopy canopy-one"><i></i></div><div class="canopy canopy-two"><i></i></div></div>
+      <div class="hero-content"><p class="kicker">AIRBORNESOLDIER® · EST. IN SPIRIT</p><h1>THE SKY<br /><em>BROTHERHOOD.</em></h1><p class="hero-sub">HERITAGE STREETWEAR FOR THE AIRBORNE COMMUNITY</p><a class="gold-button" href="/collection/">SHOP THE COLLECTION <b>↗</b></a><p class="hero-foot">PAST · PRESENT · FUTURE</p></div>
+      <div class="hero-caption">ONE SKY. MANY STORIES.</div>
     </section>
-
-    <section class="values-strip" aria-label="Our brand values">
-      <article><span class="value-symbol parachute-symbol" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M4 20C5 10 12 4 24 4s19 6 20 16c-3 2-6 2-9 0-4 3-8 3-11 0-4 3-8 3-11 0-3 2-6 2-9 0Z"/><path d="M4 20l20 22 20-22M10 20l14 22 14-22M17 20l7 22 7-22M24 4v38"/></svg></span><div><h2>AIRBORNE HERITAGE</h2><p>Inspired by the airborne brotherhood</p></div></article>
-      <article><span class="value-symbol" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m24 5 20 10-20 10L4 15 24 5Z"/><path d="m4 24 20 10 20-10M4 33l20 10 20-10"/></svg></span><div><h2>PREMIUM QUALITY</h2><p>Built for comfort and durability</p></div></article>
-      <article><span class="value-symbol" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="12" r="7"/><circle cx="9" cy="18" r="5"/><circle cx="39" cy="18" r="5"/><path d="M11 42v-5c0-8 5-13 13-13s13 5 13 13v5H11ZM2 40v-4c0-6 3-10 9-11M46 40v-4c0-6-3-10-9-11"/></svg></span><div><h2>GLOBAL COMMUNITY</h2><p>For paratroopers, veterans and supporters</p></div></article>
-      <article><span class="value-symbol infinity" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 24c-8-11-15-13-19-7-5 8 5 19 13 12l17-14c7-6 15 3 10 11-4 7-11 4-21-2Z"/></svg></span><div><h2>MORE THAN CLOTHING</h2><p>A shared identity and way of life</p></div></article>
+    <section class="values" aria-label="Brand values">
+      <article><span>01</span><div><h2>Airborne heritage</h2><p>Inspired by the people and stories</p></div></article>
+      <article><span>02</span><div><h2>Premium quality</h2><p>Considered design, made to wear</p></div></article>
+      <article><span>03</span><div><h2>Global community</h2><p>Five chapters, one shared identity</p></div></article>
+      <article><span>04</span><div><h2>More than clothing</h2><p>A brotherhood built on belonging</p></div></article>
     </section>
-
-    <section class="featured" id="collection">
-      <div class="section-heading"><span></span><h2>FEATURED COLLECTION</h2><span></span></div>
-      <div class="category-grid">
-        {categories.map((category) => (
-          <a class={`category-card category-card--${category.number}`} href="/collection/">
-            <img class="category-photo" src={category.image} alt={category.name + " apparel preview"} loading="lazy" />
-            <span class="category-shade"></span>
-            <span class="category-number">{category.number}</span>
-            <span class="category-caption"><span><b>{category.name}</b><small>{category.note}</small></span><strong>→</strong></span>
-          </a>
-        ))}
-      </div>
-      <p class="preview-note"><span>✳</span> FIRST-CHAPTER PREVIEW · GARMENT PHOTOGRAPHY IS FOR CATEGORY PRESENTATION; FINAL PRINT AND EMBROIDERY MOCKUPS WILL BE SHOWN BEFORE LAUNCH.</p>
-      <a class="all-collection" href="/collection/">EXPLORE THE FIRST COLLECTION <span>↗</span></a>
+    <section class="section categories" id="collection">
+      <div class="section-head"><p class="kicker">THE FIRST EDITION</p><h2>THE COLLECTION</h2><p>Four essentials. One unmistakable identity.</p></div>
+      <div class="category-grid">{garmentCategories.map((item) => <a class="category" href={"/collection/#" + item.slug}><span class="category-no">{item.number}</span><div class={"garment-art art-" + item.slug}><span>{item.name.toUpperCase()}</span></div><div class="category-meta"><div><h3>{item.name}</h3><p>{item.note}</p></div><b>↗</b></div></a>)}</div>
+      <p class="preview-note">GARMENT CONCEPTS ARE IN DEVELOPMENT. FINAL PRODUCT PHOTOGRAPHY, SUPPLIER DETAILS AND SPECIFICATIONS WILL BE PUBLISHED BEFORE SALES OPEN.</p>
+      <a class="text-link" href="/collection/">EXPLORE THE FIRST COLLECTION ↗</a>
     </section>
-
-    <section class="country-chapters" id="countries">
-      <div class="section-heading"><span></span><h2>FIVE COUNTRIES. ONE SKY.</h2><span></span></div>
-      <p class="country-intro">Explore airborne heritage from across the world. Every chapter carries its own story, connected by the AirBorneSoldier identity.</p>
-      <div class="country-grid">
-        {countryCollections.map((chapter) => (
-          <a class="country-card" href={"/collection/" + chapter.slug + "/"}>
-            <img src={chapter.image} alt={chapter.country + " collection preview"} loading="lazy" />
-            <span class="country-card-shade"></span>
-            <span class="country-card-copy"><small>{chapter.label}</small><b>{chapter.flag} {chapter.country}</b><em>EXPLORE CHAPTER ↗</em></span>
-          </a>
-        ))}
-      </div>
-      <p class="country-disclaimer">HERITAGE-INSPIRED CONCEPTS · OFFICIAL INSIGNIA SUBJECT TO COMMERCIAL PERMISSION</p>
+    <section class="section chapters">
+      <div class="section-head"><p class="kicker">FIVE DISTINCT AIRBORNE STORIES</p><h2>ONE SKY. FIVE CHAPTERS.</h2><p>Independent country collections, connected by a shared airborne heritage.</p></div>
+      <div class="country-grid">{countries.map((country) => <a class="country" href={"/collection/" + country.slug + "/"}><span class="country-number">CHAPTER {country.chapter}</span><span class="country-flag">{country.flag}</span><h3>{country.country}</h3><p>{country.region}</p><b>EXPLORE CHAPTER ↗</b></a>)}</div>
     </section>
-
-    <section class="story" id="story">
-      <div class="story-image" role="img" aria-label="Airborne training and parachute heritage"></div>
-      <div class="story-panel">
-        <p class="eyebrow">MORE THAN A MARK</p>
-        <h2>ONE SKY.<br /><em>ONE BROTHERHOOD.</em></h2>
-        <p>Different countries. Different generations. A shared understanding of what it means to step forward, trust the people beside you and carry yourself with purpose.</p>
-        <p>AirBorneSoldier is an independent heritage streetwear brand inspired by the global airborne community — past, present and future.</p>
-        <a href="#journal" class="story-link">DISCOVER OUR STORY <span>↗</span></a>
-      </div>
-    </section>
-
-    <section class="closing" id="journal">
-      <p class="eyebrow">THE FIRST CHAPTER STARTS HERE</p>
-      <h2>BUILT ON BELONGING.</h2>
-      <p>Not just what you wear. A standard you carry.</p>
-      <a class="gold-button" href="mailto:valskermsoldaat@gmail.com?subject=AirBorneSoldier%20early%20access">GET EARLY ACCESS <b>→</b></a>
-    </section>
+    <section class="story" id="story"><div><p class="kicker">MORE THAN A MARK</p><h2>ONE SKY.<br /><em>ONE BROTHERHOOD.</em></h2></div><div><p>Different countries. Different generations. A shared understanding of trust, courage, discipline and belonging.</p><p>AirBorneSoldier is an independent heritage streetwear brand inspired by the global airborne community — past, present and future.</p><a class="text-link" href="/collection/">DISCOVER THE CHAPTERS ↗</a></div></section>
+    <section class="closing"><p class="kicker">THE FIRST CHAPTER STARTS HERE</p><h2>BUILT ON BELONGING.</h2><p>Not just what you wear. A standard you carry.</p><a class="gold-button" href="mailto:valskermsoldaat@gmail.com?subject=AirBorneSoldier%20early%20access">GET EARLY ACCESS ↗</a></section>
   </main>
-
-  <footer class="footer">
-    <a class="footer-brand" href="/"><img src={logo} alt="AirBorneSoldier" /></a>
-    <p>THE SKY BROTHERHOOD · HERITAGE STREETWEAR</p>
-    <div><a href="/collection/">COLLECTION</a><a href="#story">OUR STORY</a><a href="mailto:valskermsoldaat@gmail.com">CONTACT</a></div>
-    <small>© {new Date().getFullYear()} AIRBORNESOLDIER. ALL RIGHTS RESERVED.</small>
-  </footer>
-
+  <footer class="footer"><a href="/"><img src={logo} alt="AirBorneSoldier" /></a><p>THE SKY BROTHERHOOD · HERITAGE STREETWEAR</p><div><a href="/collection/">COLLECTION</a><a href="#story">OUR STORY</a><a href="mailto:valskermsoldaat@gmail.com">CONTACT</a></div><small>© {new Date().getFullYear()} AIRBORNESOLDIER. ALL RIGHTS RESERVED.</small></footer>
 <style>
-/* AirBorneSoldier master visual direction: charcoal, black and antique gold */
-:root{--paper:#171914;--paper-deep:#20221d;--ink:#f3eee3;--gold:#d0ad70;--gold-dark:#9b7439;--muted:#b7ae9e}
-body{background:#171914;color:#f3eee3}
-.topline{background:#171914;color:#e4c486;border-bottom:1px solid #92703d}
-.topline-rule{background:#b9904d}
-.masthead{background:#171914;border-bottom:1px solid #8b6d3b}
-.brand img{mix-blend-mode:normal;filter:none}
-.main-nav a{color:#eee8dc}
-.main-nav a.active:after{background:#caa363}
-.header-cta{background:linear-gradient(110deg,#e5c783,#b58a45);border-color:#e4c783}
-.hero{min-height:560px;height:min(680px,64vw);background:#171914}
-.hero-photo{background-image:url("https://media.defense.gov/2009/May/12/2001996945/1088/820/0/712156-Q-NRH68-499.jpg");background-position:center 43%;filter:saturate(.72) contrast(1.12)}
-.hero-overlay{background:linear-gradient(90deg,rgba(9,12,11,.92),rgba(9,12,11,.72) 36%,rgba(9,12,11,.14) 78%),linear-gradient(0deg,rgba(9,12,11,.42),transparent 45%)}
-.hero h1{color:#f5f0e6}
-.hero h1 em{color:#d9b979}
-.hero-subtitle{color:#eee8dc}
-.hero-footnote,.hero-index{color:#e0d4bd}
-.values-strip{background:#20221d;color:#f1eadc;border-color:#655438}
-.values-strip article{border-color:#655438}
-.values-strip h2{color:#f3eee3}
-.values-strip p{color:#bdb5a6}
-.value-symbol{color:#d2ad6e}
-.value-symbol svg{width:43px;height:43px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.featured{background:#171914;color:#f3eee3}
-.section-heading h2{color:#eadcc0}
-.section-heading span{background:#a98248}
-.category-card{border:1px solid #a98248}
-.category-shade{background:linear-gradient(180deg,#0b0c0a33 0%,#0b0c0a10 32%,#0b0c0ad9 100%)}
-.category-caption small{color:#d8cdb8}
-.preview-note{color:#b7ae9e}
-.all-collection{color:#e1c58e;border-color:#a98248}
-.country-chapters{padding:55px 5.5% 70px;background:#20221d;color:#f3eee3}
-.country-intro{max-width:720px;text-align:center;margin:0 auto 30px;color:#c5bcad;font:16px/1.7 Georgia,serif}
-.country-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-.country-card{height:270px;position:relative;overflow:hidden;border:1px solid #9b7439;background:#34362f}
-.country-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.7) contrast(1.05)}
-.country-card-shade{position:absolute;inset:0;background:linear-gradient(0deg,#090a08ed,transparent 70%)}
-.country-card-copy{position:absolute;left:13px;right:13px;bottom:15px;display:flex;flex-direction:column;gap:7px;color:#f5eee0}
-.country-card-copy small{font-size:8px;letter-spacing:2px;color:#d8b979}
-.country-card-copy b{font-size:14px;letter-spacing:1px}
-.country-card-copy em{font-style:normal;font-size:8px;letter-spacing:1.5px;color:#d7c7a9}
-.country-disclaimer{text-align:center;font-size:8px;letter-spacing:1.5px;color:#aaa08e;margin:22px 0 0}
-.story{background:#171914;color:#f3eee3}
-.story-panel p:not(.eyebrow){color:#c5bcad}
-.story-link{color:#e1c58e;border-color:#a98248}
-.closing{background:#272820;color:#f3eee3}
-.closing .eyebrow{color:#d1ad70}
-.closing>p:not(.eyebrow){color:#d0c7b7}
-.footer{background:#10120f;border-top:1px solid #80623a;color:#d7d0c4}
-.footer>p{color:#b7ae9e}
-.footer small{border-color:#ffffff25;color:#a49c8d}
-@media(max-width:900px){.country-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.country-card{height:240px}}
-@media(max-width:760px){.hero{height:560px}.country-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.country-card{height:235px}.values-strip{background:#20221d}.featured{background:#171914}}
-@media(max-width:420px){.country-grid{grid-template-columns:1fr 1fr}.country-card{height:205px}.country-card-copy b{font-size:12px}}
+:root{--ink:#f2eee4;--night:#171914;--panel:#22251e;--gold:#c7a66e;--muted:#b8b1a3}*{box-sizing:border-box}body{margin:0;background:var(--night);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}.announcement{height:34px;display:flex;align-items:center;justify-content:center;gap:12px;background:#b89a68;color:#171914;font-size:9px;font-weight:800;letter-spacing:3px}.site-header{height:108px;padding:10px 6%;display:flex;align-items:center;justify-content:space-between;gap:25px;background:#f1ede4;color:#171914;border-bottom:1px solid #cbbd9f}.brand img{display:block;width:275px;max-height:84px;object-fit:contain}.site-header nav{display:flex;gap:32px}.site-header nav a{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}.site-header nav a:hover,.site-header nav .current{color:#987440}.nav-cta{padding:14px 18px;background:#c7a66e;color:#171914;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.nav-cta span{margin-left:15px}.hero{height:min(690px,70vw);min-height:540px;position:relative;overflow:hidden;display:flex;align-items:center;background:linear-gradient(90deg,#11140f 0%,#1d211b 45%,#414239 100%)}.hero-art{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse at 73% 20%,#c8a36b55,transparent 32%),linear-gradient(180deg,#343a35 0%,#77705b 50%,#292c25 100%)}.sun{position:absolute;width:340px;height:340px;border-radius:50%;background:#d4ae72;filter:blur(2px);right:17%;top:8%;opacity:.7}.ridge{position:absolute;bottom:-5%;width:120%;height:56%;clip-path:polygon(0 75%,13% 43%,24% 68%,38% 17%,51% 65%,67% 29%,82% 67%,100% 35%,100% 100%,0 100%)}.ridge-back{background:#3e4438;opacity:.9}.ridge-front{height:43%;background:#1b211b;opacity:.94;transform:translateX(-5%)}.canopy{position:absolute;top:18%;right:22%;width:125px;height:55px;border-radius:90px 90px 15px 15px;background:repeating-conic-gradient(from 0deg at 50% 100%,#d6c39d 0deg 17deg,#8d7955 18deg 19deg);clip-path:ellipse(50% 50% at 50% 50%);opacity:.9}.canopy:after{content:"";position:absolute;top:47px;left:50%;height:145px;border-left:1px solid #e4d7bc;box-shadow:-38px 0 #e4d7bc,38px 0 #e4d7bc,-18px 0 #e4d7bc,18px 0 #e4d7bc}.canopy-two{top:30%;right:8%;transform:scale(.58);opacity:.65}.hero-content{position:relative;z-index:2;margin-left:10%;max-width:620px}.kicker{font-size:10px;font-weight:800;letter-spacing:4px;color:var(--gold)}.hero h1{font-size:clamp(54px,7vw,96px);line-height:.91;letter-spacing:-4px;margin:23px 0;color:#fff}.hero h1 em,.story h2 em{font-family:Georgia,serif;font-weight:400;color:#d6b77f}.hero-sub{font-size:13px;line-height:1.8;letter-spacing:3px;font-weight:700;max-width:400px}.gold-button{display:inline-flex;justify-content:space-between;gap:38px;min-width:260px;padding:17px 19px;margin-top:20px;background:linear-gradient(110deg,#e0c58f,#b78c4b);color:#171914;font-size:10px;font-weight:900;letter-spacing:1.3px}.hero-foot{font-size:9px;letter-spacing:3px;color:#d2c7b4;margin-top:24px}.hero-caption{position:absolute;right:5%;bottom:28px;font-size:9px;letter-spacing:3px;color:#eee3ce}.values{display:grid;grid-template-columns:repeat(4,1fr);padding:25px 6%;background:#22251e;border-block:1px solid #6d5b3e}.values article{display:flex;align-items:center;gap:15px;padding:5px 18px;border-right:1px solid #66583e}.values article:last-child{border:0}.values article>span{font:22px Georgia;color:var(--gold)}.values h2{font-size:12px;letter-spacing:1px;margin:0 0 6px}.values p{font:12px Georgia;color:var(--muted);margin:0}.section{padding:75px 6%}.categories{background:#171914}.section-head{text-align:center;margin-bottom:34px}.section-head h2{font-size:clamp(27px,4vw,42px);letter-spacing:5px;margin:10px 0}.section-head>p:last-child{font:16px Georgia;color:var(--muted)}.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.category{position:relative;background:#262920;border:1px solid #74603e;padding:13px;min-height:340px}.category-no{font-size:9px;color:var(--gold);letter-spacing:2px}.garment-art{height:230px;margin:12px 0;background:radial-gradient(ellipse at 50% 40%,#65665a,#292d25 65%,#1b1e19);display:grid;place-items:center;overflow:hidden}.garment-art:before{content:"";width:120px;height:165px;background:linear-gradient(110deg,#191b18,#3d4038,#171915);clip-path:polygon(22% 0,38% 0,50% 8%,62% 0,78% 0,100% 24%,83% 38%,74% 27%,76% 100%,24% 100%,26% 27%,17% 38%,0 24%);filter:drop-shadow(0 12px 10px #0008)}.art-hoodies:before{width:130px;height:175px;clip-path:polygon(25% 10%,35% 0,65% 0,75% 10%,100% 24%,84% 40%,75% 30%,78% 100%,22% 100%,25% 30%,16% 40%,0 24%)}.art-sweatshirts:before{background:linear-gradient(110deg,#65665d,#9a988a,#4c4e46)}.art-caps:before{width:145px;height:85px;border-radius:75px 75px 15px 15px;clip-path:polygon(0 60%,12% 20%,40% 0,80% 10%,100% 60%,65% 75%,30% 100%);background:linear-gradient(110deg,#30352d,#777668,#252920)}.garment-art>span{position:absolute;font-size:8px;letter-spacing:3px;color:#d4c39e}.category-meta{display:flex;justify-content:space-between;align-items:center}.category-meta h3{font-size:17px;margin:0 0 4px}.category-meta p{font:12px Georgia;color:var(--muted);margin:0}.category-meta>b{font-size:24px;color:var(--gold)}.preview-note{text-align:center;color:#aaa18f;font-size:8px;letter-spacing:1.4px;line-height:1.8;margin:25px auto;max-width:900px}.text-link{display:block;width:max-content;margin:20px auto 0;color:#e1c58e;font-size:10px;font-weight:800;letter-spacing:2px;border-bottom:1px solid #a98248;padding-bottom:9px}.chapters{background:#22251e}.country-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.country{min-height:260px;padding:22px 18px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;background:linear-gradient(145deg,#414338,#252820 70%);border:1px solid #77603b;transition:transform .2s,border-color .2s}.country:hover{transform:translateY(-4px);border-color:#e1c58e}.country-number,.country>p{font-size:8px;letter-spacing:2px;color:#c4a36d}.country-flag{font-size:32px;margin:22px 0 8px}.country h3{font:24px Georgia;margin:0}.country>p{margin:8px 0 20px}.country>b{font-size:8px;letter-spacing:1.5px;color:#e1c58e}.story{display:grid;grid-template-columns:1fr 1fr;gap:8%;padding:85px 10%;background:#171914}.story h2{font-size:clamp(38px,5vw,62px);line-height:1.05}.story>div:last-child{align-self:center}.story>div:last-child p{font:17px/1.8 Georgia;color:#c8c1b4}.story .text-link{margin:28px 0 0}.closing{text-align:center;padding:75px 20px;background:linear-gradient(120deg,#33352b,#1b1e18);border-top:1px solid #77603b}.closing h2{font-size:clamp(30px,5vw,52px);letter-spacing:4px}.closing>p:not(.kicker){font:16px Georgia;color:#c6beaf}.closing .gold-button{margin-top:15px}.footer{padding:35px 6% 22px;text-align:center;background:#10120f;border-top:1px solid #80623a}.footer img{width:220px;max-height:70px;object-fit:contain}.footer p,.footer small{font-size:8px;letter-spacing:2px;color:#aaa18f}.footer div{display:flex;justify-content:center;gap:30px;margin:25px 0}.footer div a{font-size:9px;letter-spacing:1.5px}.footer small{display:block;border-top:1px solid #ffffff20;padding-top:18px}
+@media(max-width:900px){.site-header{padding:10px 4%}.site-header nav{gap:15px}.brand img{width:220px}.values{grid-template-columns:repeat(2,1fr);gap:15px}.values article:nth-child(2){border:0}.country-grid{grid-template-columns:repeat(3,1fr)}.category-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.announcement{font-size:7px;letter-spacing:1.6px}.site-header{height:82px;padding:8px 14px}.brand img{width:175px;max-height:62px}.site-header nav{display:none}.nav-cta{padding:12px;font-size:8px}.hero{height:610px;min-height:610px}.hero-content{margin:0 7%;}.hero h1{font-size:54px;letter-spacing:-2px}.hero-art{background-position:center}.canopy{right:8%;top:14%;transform:scale(.7)}.canopy-two{right:-2%;top:27%}.hero-caption{font-size:7px}.values{padding:22px 5%;gap:12px}.values article{padding:5px 8px;gap:9px}.values h2{font-size:10px}.values p{font-size:10px}.section{padding:55px 5%}.category{padding:9px;min-height:285px}.garment-art{height:185px}.category-meta h3{font-size:15px}.country-grid{grid-template-columns:repeat(2,1fr)}.country{min-height:220px;padding:16px 13px}.country h3{font-size:19px}.story{grid-template-columns:1fr;padding:60px 7%;gap:0}.story h2{font-size:43px}.closing{padding:60px 18px}.footer div{gap:17px;flex-wrap:wrap}}
 </style>
-
 </body>
 </html>
-
-<style>
-:root{--paper:#f1ede4;--paper-deep:#e8e1d4;--ink:#171914;--gold:#c5a36b;--gold-dark:#8e6b36;--muted:#756f63}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.topline{height:42px;background:#b89b69;color:#171914;display:flex;align-items:center;justify-content:center;gap:18px;padding:0 20px;font-size:11px;font-weight:800;letter-spacing:4px;text-align:center}
-.topline-rule{height:1px;width:clamp(25px,7vw,90px);background:#171914}
-.topline-star{font-size:15px;margin:0 5px}
-.topline-markets{white-space:nowrap}
-.masthead{height:140px;background:#f4f0e8;display:flex;align-items:center;justify-content:space-between;padding:8px clamp(24px,5.5vw,86px);gap:26px;border-bottom:1px solid #d9d0c1;position:relative;z-index:3}
-.brand{display:flex;align-items:center;flex:0 1 390px;min-width:240px}
-.brand img{display:block;width:100%;max-width:390px;max-height:126px;object-fit:contain;object-position:left center;mix-blend-mode:multiply;filter:contrast(1.18) saturate(1.08)}
-.main-nav{display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,44px);flex:1}
-.main-nav a{font-size:12px;font-weight:700;letter-spacing:1.1px;white-space:nowrap;padding:14px 0;position:relative}
-.main-nav a.active:after{content:"";position:absolute;bottom:4px;left:0;right:0;height:3px;background:var(--gold-dark)}
-.chevron{font-size:17px;margin-left:7px}
-.header-cta{display:inline-flex;align-items:center;gap:16px;white-space:nowrap;padding:14px 18px;border:1px solid #9b7130;background:linear-gradient(110deg,#f0d69a,#c69b50);color:#171914;font-size:10px;font-weight:800;letter-spacing:1.2px}
-.header-cta span{font-size:17px}
-.mobile-collection{display:none}
-.hero{min-height:510px;height:min(610px,60vw);position:relative;overflow:hidden;background:#1d2525;color:#fff;display:flex;align-items:center}
-.hero-photo{position:absolute;inset:0;background-image:url("https://media.defense.gov/2009/May/12/2001996945/1088/820/0/712156-Q-NRH68-499.jpg");background-size:cover;background-position:center 53%;filter:saturate(.83) contrast(1.08)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,17,20,.94) 0%,rgba(9,17,20,.82) 30%,rgba(9,17,20,.25) 68%,rgba(9,17,20,.08) 100%),linear-gradient(0deg,rgba(9,17,20,.2),transparent 35%)}
-.hero-copy{position:relative;z-index:1;margin-left:9.2%;max-width:620px;padding:54px 0}
-.eyebrow{font-size:14px;font-weight:800;letter-spacing:7px;color:#d8b77b;margin:0 0 24px}
-.eyebrow span{display:none}
-.hero h1{font-size:clamp(54px,6.2vw,91px);line-height:.94;letter-spacing:-3.8px;margin:0 0 24px;font-weight:900;color:#f8f6f0}
-.hero h1 em{font-style:normal;color:#d7b675}
-.hero-subtitle{font-size:17px;font-weight:700;line-height:1.65;letter-spacing:5px;color:#f1eee6;margin:0}
-.hero-rule{width:80px;height:1px;background:#d1ad70;margin:24px 0 20px}
-.gold-button{min-width:325px;display:inline-flex;align-items:center;justify-content:space-between;gap:26px;padding:16px 22px;background:linear-gradient(110deg,#d9b978,#a87935);border:1px solid #e7c987;color:#171914;font-size:14px;font-weight:800;letter-spacing:1.3px;box-shadow:0 5px 18px #0003;transition:transform .2s,filter .2s}
-.gold-button:hover{transform:translateY(-2px);filter:brightness(1.08)}
-.gold-button b{font-size:23px;line-height:1}
-.hero-footnote{font-size:9px;letter-spacing:3px;color:#d8d1c4;margin:23px 0 0}
-.hero-side-note{position:absolute;right:3.5%;top:48%;writing-mode:vertical-rl;font-size:9px;letter-spacing:3px;color:#ffffffb0}
-.hero-index{position:absolute;right:7%;bottom:25px;font-size:9px;letter-spacing:2px;color:#f2e9d8}
-.hero-index span{color:#d5b476;padding:0 8px}
-.values-strip{display:grid;grid-template-columns:repeat(4,1fr);background:#f4f0e8;padding:24px 7%;border-bottom:1px solid #ded5c7}
-.values-strip article{display:flex;align-items:center;gap:18px;padding:5px 22px;border-right:1px solid #cfc5b4;min-width:0}
-.values-strip article:first-child{padding-left:0}
-.values-strip article:last-child{border:0;padding-right:0}
-.value-symbol{font-family:Georgia,serif;font-size:42px;line-height:1;color:#76551f;min-width:42px;text-align:center}
-.infinity{font-size:48px}
-.values-strip h2{font-size:14px;font-weight:900;margin:0 0 6px;white-space:nowrap}
-.values-strip p{font-size:13px;line-height:1.35;margin:0;color:#38372f;max-width:220px}
-.featured{padding:36px 5.5% 58px;background:#f2eee6}
-.section-heading{display:flex;align-items:center;justify-content:center;gap:30px;margin:0 0 28px}
-.section-heading span{height:1px;width:118px;background:#b68b48}
-.section-heading h2{font-size:22px;letter-spacing:7px;margin:0;font-weight:900;text-align:center}
-.category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.category-card{height:300px;position:relative;overflow:hidden;background:#393a32;color:#fff;display:block}
-.category-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.category-card:hover .category-photo{transform:scale(1.045)}
-.category-shade{position:absolute;inset:0;background:linear-gradient(180deg,#1114 0%,#1110 35%,#111c 100%)}
-.category-brand{position:absolute;width:48%;max-height:118px;object-fit:contain;left:50%;top:48%;transform:translate(-50%,-50%);filter:drop-shadow(0 2px 4px #000b);mix-blend-mode:normal;opacity:1;z-index:2;pointer-events:none}
-.category-card--01 .category-brand{width:43%;left:51%;top:48%}
-.category-card--02 .category-brand{width:34%;left:58%;top:43%}
-.category-card--03 .category-brand{width:56%;left:50%;top:51%}
-.category-card--04 .category-brand{width:32%;left:67%;top:43%}
-.category-shade{z-index:1}
-.category-number{z-index:3}
-.category-caption{z-index:3}
-.category-number{position:absolute;top:14px;right:15px;font-size:9px;letter-spacing:2px;color:#fff}
-.category-caption{position:absolute;left:20px;right:18px;bottom:17px;display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
-.category-caption b{display:block;font-size:19px;letter-spacing:2px}
-.category-caption small{display:block;font-size:10px;color:#e5dfd3;margin-top:5px}
-.category-caption strong{font-size:32px;font-weight:400;line-height:.9}
-.preview-note{text-align:center;color:#777064;font-size:9px;letter-spacing:1.8px;line-height:1.6;margin:27px auto 18px}
-.preview-note span{color:#a57d3e;margin-right:8px}
-.all-collection{display:block;width:max-content;margin:0 auto;color:#5f4a2b;border-bottom:1px solid #a9854c;padding:7px 0;font-size:10px;font-weight:800;letter-spacing:2px}
-.all-collection span{margin-left:18px}
-.story{display:grid;grid-template-columns:1.05fr .95fr;min-height:440px;background:#1d211e;color:#f2eee6}
-.story-image{background-image:url("https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2312/8165694/1000w_q95.jpg");background-size:cover;background-position:center;min-height:440px}
-.story-panel{padding:70px clamp(35px,7vw,110px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-.story-panel .eyebrow{font-size:10px;letter-spacing:4px;margin-bottom:20px}
-.story-panel h2{font-size:clamp(36px,4vw,57px);line-height:1.02;letter-spacing:-1.5px;margin:0 0 23px}
-.story-panel h2 em{font-family:Georgia,serif;font-weight:400;color:#d2ae70}
-.story-panel p:not(.eyebrow){font:15px/1.75 Georgia,serif;color:#d2cec3;max-width:520px;margin:0 0 14px}
-.story-link{margin-top:14px;font-size:10px;font-weight:800;letter-spacing:2px;border-bottom:1px solid #c5a36b;padding-bottom:9px}
-.story-link span{color:#d2ae70;margin-left:18px}
-.closing{text-align:center;padding:72px 20px;background:#e4dccd}
-.closing .eyebrow{font-size:10px;letter-spacing:4px;color:#876839;margin-bottom:16px}
-.closing h2{font-size:clamp(32px,4vw,52px);letter-spacing:3px;margin:0 0 13px}
-.closing>p:not(.eyebrow){font:17px Georgia,serif;color:#5f594e;margin:0 0 25px}
-.closing .gold-button{min-width:270px}
-.footer{background:#171914;color:#d7d0c4;padding:26px 7% 20px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
-.footer-brand{width:185px;display:block}
-.footer-brand img{width:100%;max-height:65px;object-fit:contain;filter:none}
-.footer>p{font-size:9px;letter-spacing:2px;color:#bcb4a5}
-.footer>div{display:flex;gap:23px}
-.footer>div a,.footer small{font-size:9px;letter-spacing:1.4px}
-.footer small{width:100%;border-top:1px solid #ffffff25;padding-top:17px;color:#a49c8d}
-@media(max-width:1050px){.masthead{gap:16px;padding-inline:3%}.brand{flex-basis:300px;min-width:210px}.main-nav{gap:17px}.main-nav a{font-size:10px}.header-cta{font-size:9px;padding:12px 13px}.values-strip{padding-inline:4%}.values-strip article{padding-inline:13px;gap:11px}.values-strip h2{font-size:11px}.values-strip p{font-size:11px}.category-card{height:260px}.category-caption b{font-size:15px}}
-@media(max-width:760px){.topline{height:36px;font-size:8px;letter-spacing:2px;gap:9px}.topline-rule{width:22px}.topline-markets{font-size:7px;letter-spacing:1px}.masthead{height:104px;padding:7px 15px;gap:12px}.brand{flex:1 1 auto;min-width:0;max-width:245px}.brand img{max-height:90px}.main-nav{display:none}.header-cta{margin-left:auto;font-size:8px;padding:11px 10px}.mobile-collection{display:none;border:1px solid #a9854c;padding:11px 10px;font-size:8px;font-weight:800;letter-spacing:1px;white-space:nowrap}.hero{height:560px;min-height:0}.hero-photo{background-position:58% center}.hero-overlay{background:linear-gradient(90deg,#091114ed 0%,#091114b8 55%,#09111445 100%)}.hero-copy{margin-left:7%;padding:35px 0;max-width:82%}.eyebrow{font-size:10px;letter-spacing:4px;margin-bottom:20px}.hero h1{font-size:clamp(45px,9vw,68px);letter-spacing:-2px}.hero-subtitle{font-size:12px;letter-spacing:3px}.hero-side-note{display:none}.hero-index{right:6%;font-size:8px}.values-strip{grid-template-columns:repeat(2,1fr);padding:14px 5%;gap:0}.values-strip article{padding:14px 8px;border-right:0;border-bottom:1px solid #d4cabb}.values-strip article:nth-child(odd){border-right:1px solid #d4cabb}.values-strip article:nth-child(n+3){border-bottom:0}.values-strip article:first-child{padding-left:8px}.values-strip article:last-child{padding-right:8px}.value-symbol{font-size:34px;min-width:34px}.values-strip h2{font-size:10px;white-space:normal}.values-strip p{font-size:10px}.featured{padding:30px 4% 45px}.section-heading{gap:12px}.section-heading span{width:32px}.section-heading h2{font-size:14px;letter-spacing:3px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.category-card{height:260px}.category-brand{width:58%;max-height:86px}.category-card--01 .category-brand{width:48%;left:51%;top:48%}.category-card--02 .category-brand{width:39%;left:58%;top:43%}.category-card--03 .category-brand{width:63%;left:50%;top:51%}.category-card--04 .category-brand{width:37%;left:67%;top:43%}.category-caption{left:12px;right:12px;bottom:13px}.category-caption b{font-size:14px;letter-spacing:1px}.category-caption small{font-size:9px}.category-caption strong{font-size:26px}.preview-note{font-size:8px}.story{grid-template-columns:1fr}.story-image{min-height:260px}.story-panel{padding:55px 7%}.story-panel h2{font-size:39px}.closing{padding:60px 18px}.footer{padding:25px 6%;justify-content:center;text-align:center}.footer-brand{margin:auto}.footer>p{width:100%;line-height:1.6}.footer>div{width:100%;justify-content:center}.footer small{line-height:1.6}}
-@media(max-width:390px){.topline{font-size:7px;letter-spacing:1.3px}.topline-markets{display:none}.masthead{padding-inline:10px}.brand{max-width:175px}.brand img{max-height:78px}.mobile-collection{font-size:7px;padding:10px 7px}.category-card{height:220px}.category-caption b{font-size:12px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
-
-.country-chapters{padding:64px 5.5% 70px;background:#e9e2d5;color:#171914}.country-intro{text-align:center;max-width:680px;margin:0 auto 28px;font:16px/1.6 Georgia,serif;color:#625b4e}.country-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.country-card{height:260px;position:relative;display:block;overflow:hidden;background:#34372f;color:#fff}.country-card img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.08);transition:transform .5s}.country-card:hover img{transform:scale(1.045)}.country-card-shade{position:absolute;inset:0;background:linear-gradient(180deg,#1111 15%,#111b 100%)}.country-card-copy{position:absolute;left:15px;right:12px;bottom:16px;display:flex;flex-direction:column;gap:8px}.country-card-copy small{font-size:8px;letter-spacing:2px;color:#e0c18b}.country-card-copy b{font-size:15px;line-height:1.25}.country-card-copy em{font-style:normal;font-size:8px;letter-spacing:1.4px;border-top:1px solid #ffffff75;padding-top:9px}.country-disclaimer{text-align:center;color:#777064;font-size:8px;letter-spacing:1.5px;margin:22px 0 0}
-@media(max-width:760px){.country-chapters{padding:42px 4% 48px}.country-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.country-card{height:220px}.country-card:last-child{grid-column:1/-1}.country-card-copy b{font-size:14px}}
-</style>
-
-<style>
-/* AirBorneSoldier visual refinement — shared heritage palette and product-first cards */
-:root{--paper:#f4f0e8;--paper-deep:#e9e1d3;--ink:#171914;--gold:#c5a36b;--gold-dark:#8e6b36}
-.masthead{background:#f4f0e8;box-shadow:0 2px 12px #2a21120b}
-.brand img{mix-blend-mode:normal;filter:drop-shadow(0 2px 2px #4b3a1b22);object-position:left center}
-.hero{height:clamp(500px,42vw,650px);min-height:500px}
-.hero-photo{background-position:center 48%;filter:saturate(.9) contrast(1.08)}
-.hero-overlay{background:linear-gradient(90deg,rgba(9,17,20,.91) 0%,rgba(9,17,20,.75) 35%,rgba(9,17,20,.18) 72%,rgba(9,17,20,.08) 100%),linear-gradient(0deg,rgba(9,17,20,.25),transparent 40%)}
-.hero-copy{max-width:640px}
-.hero h1{font-size:clamp(58px,6.4vw,96px);letter-spacing:-3px}
-.hero-subtitle{max-width:540px}
-.values-strip{background:#f5f1e9}
-.value-symbol svg{width:42px;height:42px;fill:none;stroke:#76551f;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.category-card{height:clamp(230px,22vw,330px);background:#34342e}
-.category-photo{filter:saturate(.88) contrast(1.02)}
-.category-shade{background:linear-gradient(180deg,rgba(15,16,14,.02) 15%,rgba(15,16,14,.08) 45%,rgba(15,16,14,.78) 100%)}
-.category-caption{left:18px;right:16px;bottom:17px}
-.category-caption b{font-size:clamp(14px,1.2vw,19px)}
-.category-caption small{font-size:10px}
-.preview-note{max-width:900px}
-.story{background:#1b211e}
-.story-image{background-position:center;background-size:cover}
-@media(max-width:760px){
- .masthead{height:100px;padding:7px 14px}
- .brand{max-width:235px;min-width:0}
- .brand img{max-height:86px}
- .hero{height:570px;min-height:0}
- .hero-photo{background-position:58% center}
- .hero-overlay{background:linear-gradient(90deg,rgba(9,17,20,.88),rgba(9,17,20,.52) 62%,rgba(9,17,20,.2))}
- .hero-copy{max-width:88%;margin-left:6%}
- .hero h1{font-size:clamp(46px,10vw,68px);letter-spacing:-2px}
- .category-card{height:250px}
- .category-caption b{font-size:14px}
- .value-symbol svg{width:34px;height:34px}
-}
-</style>
-
-<style>
-/* AirBorneSoldier — generated visual direction */
-.topline{height:40px;background:linear-gradient(90deg,#b28a4b,#d5b77f,#b28a4b);letter-spacing:4px;color:#151611}
-.topline-star{display:none}
-.masthead{height:142px;padding:8px clamp(28px,5vw,78px);background:#f8f4ec}
-.brand{flex-basis:390px}
-.brand img{max-height:136px}
-.main-nav{gap:clamp(20px,3vw,48px)}
-.main-nav a{font-size:13px;letter-spacing:1px}
-.header-cta{background:linear-gradient(110deg,#e6c47e,#b88a3e);border:1px solid #d4a64d;box-shadow:0 4px 14px #6e4b1b22;padding:15px 21px;font-size:11px}
-.header-utility{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border:1px solid #c9b99d;border-radius:50%;font-size:23px;color:#25251f}
-.header-bag{font-size:18px}
-.hero{height:clamp(470px,37vw,570px);min-height:470px}
-.hero h1{font-size:clamp(58px,6vw,88px);letter-spacing:-2.5px}
-.hero-copy{margin-left:8.6%}
-.hero-subtitle{letter-spacing:5px}
-.gold-button{background:linear-gradient(110deg,#e4bd6b,#b17a29);border:1px solid #f0cf85;box-shadow:0 5px 16px #0005;min-width:325px}
-.values-strip{padding:23px 6%;background:#f8f3e9}
-.values-strip article{gap:20px}
-.value-symbol{color:#7d551b}
-.featured{padding:32px 4.5% 58px;background:#f7f2e9}
-.section-heading{gap:26px;margin-bottom:25px}
-.section-heading h2{letter-spacing:7px}
-.category-grid{gap:8px}
-.category-card{height:clamp(220px,19vw,300px);background:#292922}
-.category-photo{filter:saturate(.9) contrast(1.05)}
-.category-brand{position:absolute;width:54%;max-height:112px;object-fit:contain;left:50%;top:48%;transform:translate(-50%,-50%);z-index:2;filter:drop-shadow(0 2px 4px #000b)}
-.category-card--01 .category-brand{width:56%;left:50%;top:48%}
-.category-card--02 .category-brand{width:43%;left:55%;top:46%}
-.category-card--03 .category-brand{width:62%;left:50%;top:49%}
-.category-card--04 .category-brand{width:43%;left:55%;top:45%}
-.category-caption{left:20px;right:18px;bottom:17px}
-.category-caption b{font-size:18px;letter-spacing:2px}
-.category-caption strong{font-size:34px}
-@media(max-width:1050px){.header-utility{display:none}}
-@media(max-width:760px){
- .topline{height:34px;font-size:7px;letter-spacing:2px}
- .masthead{height:98px;padding:6px 12px}
- .brand{max-width:210px}
- .brand img{max-height:84px}
- .header-cta{font-size:8px;padding:10px 9px;min-width:0}
- .hero{height:550px;min-height:0}
- .hero h1{font-size:clamp(45px,10vw,66px)}
- .gold-button{min-width:270px;font-size:11px}
- .category-card{height:230px}
- .category-brand{max-height:76px}
- .category-caption b{font-size:13px}
-}
-</style>
-
-<style>
-/* Category photography refresh: real apparel imagery, no inaccurate AI logo overlays */
-.category-brand{display:none!important}
-.category-card{height:clamp(250px,23vw,340px)!important}
-.category-photo{object-fit:cover!important;filter:saturate(.86) contrast(1.08)!important}
-.category-card--01 .category-photo{object-position:center 38%!important}
-.category-card--02 .category-photo{object-position:center 35%!important}
-.category-card--03 .category-photo{object-position:center 42%!important}
-.category-card--04 .category-photo{object-position:center 36%!important}
-.category-shade{background:linear-gradient(180deg,rgba(10,12,12,.02) 12%,rgba(10,12,12,.04) 45%,rgba(10,12,12,.78) 100%)!important}
-.category-caption{left:20px!important;right:18px!important;bottom:18px!important}
-@media(max-width:760px){
- .category-card{height:auto!important;aspect-ratio: .78!important}
- .category-caption{left:12px!important;right:12px!important;bottom:13px!important}
- .category-caption b{font-size:14px!important;letter-spacing:1.2px!important}
- .category-caption small{font-size:9px!important}
- .category-caption strong{font-size:28px!important}
- .category-photo{object-position:center center!important}
-}
-@media(max-width:390px){.category-card{aspect-ratio:.76!important}}
-</style>
-
-<style>
-/* FINAL HOMEPAGE OVERRIDES — premium charcoal / antique gold */
-:root{color-scheme:dark}
-body{background:#11130f!important;color:#f3eee3!important}
-.topline{background:#11130f!important;color:#e6c98f!important;border-color:#80643c!important}
-.topline-rule{background:#c5a064!important}
-.masthead{background:#171914!important;border-color:#80643c!important}
-.brand img{mix-blend-mode:normal!important;filter:none!important}
-.main-nav a{color:#eee8dc!important}
-.main-nav a.active:after{background:#d0ad70!important}
-.header-cta{background:linear-gradient(110deg,#e5c783,#b58a45)!important;color:#171914!important;border-color:#e4c783!important}
-.hero{min-height:590px!important;height:min(690px,66vw)!important;background:#171914!important}
-.hero-photo{background-image:url("https://media.defense.gov/2009/May/12/2001996945/1088/820/0/712156-Q-NRH68-499.jpg")!important;background-position:center 43%!important;filter:saturate(.72) contrast(1.12)!important}
-.hero-overlay{background:linear-gradient(90deg,rgba(8,11,10,.92),rgba(8,11,10,.65) 43%,rgba(8,11,10,.08) 100%),linear-gradient(0deg,rgba(8,11,10,.5),transparent 48%)!important}
-.hero h1{color:#f5f0e6!important}.hero h1 em{color:#d9b979!important}
-.hero-subtitle,.hero-footnote,.hero-index{color:#eee8dc!important}
-.hero-rule{background:#d0ad70!important}
-.gold-button{background:linear-gradient(110deg,#e5c783,#b58a45)!important;border-color:#e4c783!important;color:#171914!important}
-.values-strip{background:#20221d!important;color:#f3eee3!important;border-color:#655438!important}
-.values-strip article{border-color:#655438!important}
-.values-strip h2{color:#f3eee3!important}.values-strip p{color:#bdb5a6!important}
-.value-symbol{color:#d2ad6e!important}
-.featured{background:#171914!important;color:#f3eee3!important}
-.section-heading h2{color:#eadcc0!important}.section-heading span{background:#a98248!important}
-.category-grid{gap:12px!important}
-.category-card{height:clamp(250px,27vw,360px)!important;border:1px solid #a98248!important;background:#292c24!important}
-.category-photo{filter:saturate(.78) contrast(1.06)!important}
-.category-shade{background:linear-gradient(180deg,#090a0833,#090a0808 30%,#090a08df)!important}
-.category-caption b{color:#fff!important;font-size:clamp(16px,1.4vw,21px)!important}
-.category-caption small{color:#d8cdb8!important}
-.category-caption strong{color:#e0bd7c!important}
-.category-number{color:#e8d5b3!important}
-.preview-note{color:#b7ae9e!important}
-.all-collection{color:#e1c58e!important;border-color:#a98248!important}
-.country-chapters{background:#20221d!important;color:#f3eee3!important;padding:65px 5.5% 76px!important}
-.country-intro{color:#c5bcad!important}
-.country-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:12px!important}
-.country-card{height:clamp(220px,22vw,300px)!important;border:1px solid #9b7439!important}
-.country-card img{filter:saturate(.78) contrast(1.05)!important}
-.country-card-copy{color:#f5eee0!important}
-.country-card-copy small{color:#d8b979!important}
-.country-card-copy em{color:#d7c7a9!important}
-.country-disclaimer{color:#aaa08e!important}
-.story{background:#171914!important;color:#f3eee3!important}
-.story-panel p:not(.eyebrow){color:#c5bcad!important}
-.story-link{color:#e1c58e!important;border-color:#a98248!important}
-.closing{background:#272820!important;color:#f3eee3!important}
-.closing .eyebrow{color:#d1ad70!important}.closing>p:not(.eyebrow){color:#d0c7b7!important}
-.footer{background:#10120f!important;border-color:#80623a!important;color:#d7d0c4!important}
-.footer>p{color:#b7ae9e!important}.footer small{border-color:#ffffff25!important;color:#a49c8d!important}
-@media(max-width:900px){.country-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}.country-card{height:240px!important}}
-@media(max-width:760px){.hero{height:560px!important}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.category-card{height:270px!important}.country-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.country-card{height:225px!important}.values-strip{background:#20221d!important}}
-@media(max-width:420px){.category-card{height:225px!important}.country-card{height:200px!important}.country-card-copy b{font-size:12px!important}}
-</style>
