@@ -3,10 +3,10 @@ import "../styles/global.css";
 import { products as countryCollections } from "../data/products";
 
 const categories = [
-  { name: "HOODIES", note: "Layers for the brotherhood", image: "https://images.unsplash.com/photo-1620532393942-ceb8baf5f8a0?auto=format&fit=crop&w=1200&q=88", number: "01" },
-  { name: "T-SHIRTS", note: "The everyday standard", image: "https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?auto=format&fit=crop&w=1200&q=88", number: "02" },
-  { name: "CAPS", note: "The finishing mark", image: "https://images.unsplash.com/photo-1544435253-f0ead49638fa?auto=format&fit=crop&w=1200&q=88", number: "03" },
-  { name: "JACKETS", note: "Built for the elements", image: "https://images.unsplash.com/photo-1524860363694-645e3377427d?auto=format&fit=crop&w=1200&q=88", number: "04" }
+  { name: "T-SHIRTS", note: "The everyday standard", image: "https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?auto=format&fit=crop&w=1200&q=88", number: "01" },
+  { name: "HOODIES", note: "Layers for the brotherhood", image: "https://images.unsplash.com/photo-1620532393942-ceb8baf5f8a0?auto=format&fit=crop&w=1200&q=88", number: "02" },
+  { name: "SWEATSHIRTS", note: "The heritage layer", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=88", number: "03" },
+  { name: "CAPS", note: "The finishing mark", image: "https://images.unsplash.com/photo-1544435253-f0ead49638fa?auto=format&fit=crop&w=1200&q=88", number: "04" }
 ];
 const logo = "https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw25su/c14fa22d-dcdf-4531-ac68-c193884954df.png";
 ---
@@ -124,6 +124,64 @@ const logo = "https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw
     <div><a href="/collection/">COLLECTION</a><a href="#story">OUR STORY</a><a href="mailto:valskermsoldaat@gmail.com">CONTACT</a></div>
     <small>© {new Date().getFullYear()} AIRBORNESOLDIER. ALL RIGHTS RESERVED.</small>
   </footer>
+
+<style>
+/* AirBorneSoldier master visual direction: charcoal, black and antique gold */
+:root{--paper:#171914;--paper-deep:#20221d;--ink:#f3eee3;--gold:#d0ad70;--gold-dark:#9b7439;--muted:#b7ae9e}
+body{background:#171914;color:#f3eee3}
+.topline{background:#171914;color:#e4c486;border-bottom:1px solid #92703d}
+.topline-rule{background:#b9904d}
+.masthead{background:#171914;border-bottom:1px solid #8b6d3b}
+.brand img{mix-blend-mode:normal;filter:none}
+.main-nav a{color:#eee8dc}
+.main-nav a.active:after{background:#caa363}
+.header-cta{background:linear-gradient(110deg,#e5c783,#b58a45);border-color:#e4c783}
+.hero{min-height:560px;height:min(680px,64vw);background:#171914}
+.hero-photo{background-image:url("https://media.defense.gov/2009/May/12/2001996945/1088/820/0/712156-Q-NRH68-499.jpg");background-position:center 43%;filter:saturate(.72) contrast(1.12)}
+.hero-overlay{background:linear-gradient(90deg,rgba(9,12,11,.92),rgba(9,12,11,.72) 36%,rgba(9,12,11,.14) 78%),linear-gradient(0deg,rgba(9,12,11,.42),transparent 45%)}
+.hero h1{color:#f5f0e6}
+.hero h1 em{color:#d9b979}
+.hero-subtitle{color:#eee8dc}
+.hero-footnote,.hero-index{color:#e0d4bd}
+.values-strip{background:#20221d;color:#f1eadc;border-color:#655438}
+.values-strip article{border-color:#655438}
+.values-strip h2{color:#f3eee3}
+.values-strip p{color:#bdb5a6}
+.value-symbol{color:#d2ad6e}
+.value-symbol svg{width:43px;height:43px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.featured{background:#171914;color:#f3eee3}
+.section-heading h2{color:#eadcc0}
+.section-heading span{background:#a98248}
+.category-card{border:1px solid #a98248}
+.category-shade{background:linear-gradient(180deg,#0b0c0a33 0%,#0b0c0a10 32%,#0b0c0ad9 100%)}
+.category-caption small{color:#d8cdb8}
+.preview-note{color:#b7ae9e}
+.all-collection{color:#e1c58e;border-color:#a98248}
+.country-chapters{padding:55px 5.5% 70px;background:#20221d;color:#f3eee3}
+.country-intro{max-width:720px;text-align:center;margin:0 auto 30px;color:#c5bcad;font:16px/1.7 Georgia,serif}
+.country-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.country-card{height:270px;position:relative;overflow:hidden;border:1px solid #9b7439;background:#34362f}
+.country-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.7) contrast(1.05)}
+.country-card-shade{position:absolute;inset:0;background:linear-gradient(0deg,#090a08ed,transparent 70%)}
+.country-card-copy{position:absolute;left:13px;right:13px;bottom:15px;display:flex;flex-direction:column;gap:7px;color:#f5eee0}
+.country-card-copy small{font-size:8px;letter-spacing:2px;color:#d8b979}
+.country-card-copy b{font-size:14px;letter-spacing:1px}
+.country-card-copy em{font-style:normal;font-size:8px;letter-spacing:1.5px;color:#d7c7a9}
+.country-disclaimer{text-align:center;font-size:8px;letter-spacing:1.5px;color:#aaa08e;margin:22px 0 0}
+.story{background:#171914;color:#f3eee3}
+.story-panel p:not(.eyebrow){color:#c5bcad}
+.story-link{color:#e1c58e;border-color:#a98248}
+.closing{background:#272820;color:#f3eee3}
+.closing .eyebrow{color:#d1ad70}
+.closing>p:not(.eyebrow){color:#d0c7b7}
+.footer{background:#10120f;border-top:1px solid #80623a;color:#d7d0c4}
+.footer>p{color:#b7ae9e}
+.footer small{border-color:#ffffff25;color:#a49c8d}
+@media(max-width:900px){.country-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.country-card{height:240px}}
+@media(max-width:760px){.hero{height:560px}.country-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.country-card{height:235px}.values-strip{background:#20221d}.featured{background:#171914}}
+@media(max-width:420px){.country-grid{grid-template-columns:1fr 1fr}.country-card{height:205px}.country-card-copy b{font-size:12px}}
+</style>
+
 </body>
 </html>
 
