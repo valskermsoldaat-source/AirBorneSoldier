@@ -1,198 +1,27 @@
 ---
 import "../../styles/global.css";
-import { products } from "../../data/products";
-
+import { countries, products } from "../../data/products";
 export function getStaticPaths() {
-  return products.map((product) => ({ params: { slug: product.slug }, props: { product } }));
+  return countries.map((country) => ({ params: { slug: country.slug }, props: { country } }));
 }
-
-const { product } = Astro.props;
-const related = products.filter((item) => item.slug !== product.slug).slice(0, 3);
+const { country } = Astro.props;
+const chapterProducts = products.filter((product) => product.countrySlug === country.slug);
+const logo = "/images/airbornesoldier-logo.svg";
 ---
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content={product.description} />
-  <meta name="theme-color" content="#171914" />
-  <title>{product.name} — AirBorneSoldier®</title>
-</head>
+<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content={country.intro} /><title>{country.country} Airborne Heritage — AirBorneSoldier®</title></head>
 <body>
-  <div class="topline">THE SKY BROTHERHOOD — BUILT ON BELONGING <span>✳</span> UK · EUROPE · USA</div>
-  <header class="header">
-    <a class="logo" href="/" aria-label="AirBorneSoldier home"><img class="brand-image" src="https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw25su/c14fa22d-dcdf-4531-ac68-c193884954df.png" alt="AirBorneSoldier — The Sky Brotherhood" /></a>
-    <nav><a href="/">HOME</a><a href="/collection/">COLLECTION</a><a href="/#story">OUR STORY</a><a href="mailto:valskermsoldaat@gmail.com">CONTACT</a></nav><a class="header-cta" href="mailto:valskermsoldaat@gmail.com?subject=AirBorneSoldier%20early%20access">SHOP THE COLLECTION <span>→</span></a>
-  </header>
-  <main>
-    <div class="breadcrumbs"><a href="/">HOME</a><span>/</span><a href="/collection/">COLLECTION</a><span>/</span><span>{product.name.toUpperCase()}</span></div>
-    <section class="product-layout">
-      <div class="gallery">
-        <div class="main-image"><img src={product.image} alt={product.name} /></div>
-        <p class="image-note">AIRBORNESOLDIER® · THE FIRST EDITION</p>
-      </div>
-      <div class="product-copy">
-        <p class="eyebrow">{product.flag} {product.country.toUpperCase()} · {product.label}</p>
-        <h1>{product.name}</h1>
-        <p class="price">{product.price}</p>
-        <p class="description">{product.description}</p>
-        <div class="design-placement"><strong>THE DESIGN APPROACH</strong><span>FRONT CHEST / SHOULDER · AIRBORNESOLDIER MAKER’S MARK</span><span>BACK · COUNTRY AIRBORNE HERITAGE ARTWORK</span></div>
-        <div class="rule"></div>
-        <div class="option-row"><span>COLOUR</span><strong>{product.colour}</strong></div>
-        <div class={"swatch swatch-" + product.slug} aria-label={"Colour: " + product.colour}><span></span>{product.colour}</div>
-        <div class="option-row"><span>SIZE</span><span class="muted">Size availability to be confirmed at launch</span></div>
-        <div class="size-list" aria-label="Indicative sizes">
-          <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span><span>XXL</span>
-        </div>
-        <a class="notify-button" href={"mailto:valskermsoldaat@gmail.com?subject=" + encodeURIComponent("Early access — " + product.name) + "&body=" + encodeURIComponent("Please let me know when " + product.name + " is available.")}>REGISTER INTEREST <b>↗</b></a>
-        <p class="availability"><span>✳</span> FIRST EDITION · IN DEVELOPMENT</p>
-        <p class="availability-copy">This is a product preview, not an active listing. Final colours, sizes, specifications, pricing and availability will be confirmed before orders open. No payment can be taken on this page.</p>
-        <div class="rule"></div>
-        <h2 class="details-heading">THE DETAILS</h2>
-        <ul>{product.details.map((detail) => <li>{detail}</li>)}</ul>
-        <p class="back-link"><a href="/collection/">← BACK TO THE COLLECTION</a></p>
-      </div>
-    </section>
-    <section class="more">
-      <p class="eyebrow">CONTINUE EXPLORING</p><h2>THE FIRST EDITION.</h2>
-      <div class="related-grid">{related.map((item) => <a href={"/collection/" + item.slug + "/"} class="related-card"><img src={item.image} alt={item.name} loading="lazy" /><span>{item.category}</span><strong>{item.name}</strong></a>)}</div>
-    </section>
-  </main>
-  <footer><a href="/">AIRBORNESOLDIER®</a><span>SKY BROTHERHOOD</span><a href="mailto:valskermsoldaat@gmail.com">CONTACT ↗</a></footer>
-
+<div class="announcement">THE SKY BROTHERHOOD <span>—</span> BUILT ON BELONGING</div>
+<header class="site-header"><a class="brand" href="/"><img src={logo} alt="AirBorneSoldier" /></a><nav><a href="/">Home</a><a href="/collection/">Collection</a><a href="/#story">Our story</a><a href="mailto:valskermsoldaat@gmail.com">Contact</a></nav><a class="nav-cta" href="/collection/">All chapters ↗</a></header>
+<main>
+<div class="breadcrumb"><a href="/">HOME</a> / <a href="/collection/">COLLECTION</a> / {country.country.toUpperCase()}</div>
+<section class="country-hero"><p class="kicker">CHAPTER {country.chapter} · {country.region}</p><div class="flag">{country.flag}</div><h1>{country.country}<br /><em>AIRBORNE HERITAGE.</em></h1><p>{country.intro}</p><span>ORIGINAL HERITAGE-INSPIRED STREETWEAR</span></section>
+<section class="chapter-intro"><p class="kicker">THE AIRBORNESOLDIER CHAPTERS</p><h2>ONE SKY. A DISTINCT STORY.</h2><p>Each national chapter is developed as an original interpretation of airborne heritage. Historical references are researched separately; official insignia, unit badges and protected marks are not represented as licensed or authentic without confirmed permission.</p></section>
+<section class="garments"><div class="section-head"><p class="kicker">THE FIRST EDITION</p><h2>GARMENT CONCEPTS</h2><p>Product previews only — final blanks, artwork, colourways, sizing and pricing are not yet confirmed.</p></div><div class="product-grid">{chapterProducts.map((product) => <a class="product" href={"/products/" + product.slug + "/"}><div class="product-art"><span>{country.flag}</span><b>{product.category.toUpperCase()}</b></div><small>{product.status}</small><h3>{product.name}</h3><p>{product.colour}</p><strong>VIEW CONCEPT ↗</strong></a>)}</div></section>
+</main>
+<footer><a href="/">AIRBORNESOLDIER®</a><span>THE SKY BROTHERHOOD</span><a href="/collection/">ALL CHAPTERS ↗</a></footer>
 <style>
-/* Master charcoal-and-antique-gold product page presentation */
-body{background:#171914!important;color:#f3eee3!important}
-.topline{background:#171914!important;color:#e4c486!important;border-bottom:1px solid #92703d!important}
-.header{background:#171914!important;border-bottom:1px solid #8b6d3b!important}
-.header nav,.header nav a{color:#eee8dc!important}
-.brand-image{mix-blend-mode:normal!important;filter:none!important}
-.header-cta{background:linear-gradient(110deg,#e5c783,#b58a45)!important;border-color:#e4c783!important}
-.breadcrumbs{background:#171914!important;color:#aaa08e!important}
-.product-layout{background:#171914!important}
-.main-image{background:#282a23!important;border:1px solid #80623a!important}
-.product-copy h1{color:#f3eee3!important}
-.product-copy .eyebrow,.price,.availability,.back-link{color:#d0ad70!important}
-.description,.availability-copy,.product-copy ul{color:#c5bcad!important}
-.design-placement{background:#252720!important;border-left-color:#b88a3e!important;color:#e5ddce!important}
-.design-placement strong{color:#e5c783!important}
-.rule{background:#655438!important}
-.option-row{color:#aaa08e!important}
-.option-row strong{color:#eee8dc!important}
-.size-list span{background:#20221d!important;border-color:#80623a!important;color:#eee8dc!important}
-.notify-button{background:linear-gradient(110deg,#e5c783,#b58a45)!important;color:#171914!important;border-color:#e4c783!important}
-.more{background:#20221d!important;color:#f3eee3!important}
-.more .eyebrow,.related-card span{color:#d0ad70!important}
-.related-card strong{color:#f3eee3!important}
-footer{background:#10120f!important;border-color:#80623a!important;color:#d7d0c4!important}
-footer a:first-child{color:#f0ece2!important}
+:root{--ink:#f1ede4;--dark:#171914;--gold:#c7a66e;--muted:#b8b1a3}*{box-sizing:border-box}body{margin:0;background:#eeeae1;color:#171914;font-family:Arial,sans-serif}a{color:inherit;text-decoration:none}.announcement{height:34px;background:#b89a68;display:grid;place-items:center;color:#171914;font-size:9px;font-weight:800;letter-spacing:3px}.site-header{height:108px;padding:10px 6%;display:flex;align-items:center;justify-content:space-between;background:#f5f1e8;border-bottom:1px solid #d3c9b8;gap:20px}.brand img{width:275px;max-height:84px;object-fit:contain}.site-header nav{display:flex;gap:30px}.site-header nav a{font-size:10px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.nav-cta{padding:14px 18px;background:#c7a66e;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.breadcrumb{padding:18px 7%;font-size:8px;letter-spacing:1.5px;color:#777165}.country-hero{padding:95px 10%;background:radial-gradient(ellipse at 78% 20%,#58594a,#30342b 48%,#171914);color:#f1ede4;min-height:440px}.kicker{font-size:9px;letter-spacing:3px;font-weight:800;color:#ad8952}.country-hero .kicker{color:#d8ba83}.flag{font-size:45px;margin-top:32px}.country-hero h1{font-size:clamp(48px,7vw,82px);line-height:.95;letter-spacing:-3px;margin:12px 0 20px}.country-hero h1 em{font:italic 400 .65em Georgia;color:#d6b77f}.country-hero>p:not(.kicker){font:17px/1.7 Georgia;color:#d4cdbf;max-width:650px}.country-hero>span{font-size:8px;letter-spacing:2px;color:#c6b797}.chapter-intro{padding:65px 10%;text-align:center;background:#e7e1d6}.chapter-intro h2,.section-head h2{font-size:30px;letter-spacing:3px}.chapter-intro>p:last-child{max-width:780px;margin:auto;font:16px/1.8 Georgia;color:#615d53}.garments{padding:70px 7%}.section-head{text-align:center;margin-bottom:35px}.section-head>p:last-child{font:14px Georgia;color:#777165}.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.product-art{height:250px;background:radial-gradient(ellipse at 50% 40%,#77786b,#34372e 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#eee5d3}.product-art span{font-size:34px}.product-art b{font-size:8px;letter-spacing:2px}.product small{display:block;margin-top:13px;font-size:8px;letter-spacing:1px;color:#987544}.product h3{font:20px Georgia;margin:8px 0}.product p{font:12px Georgia;color:#777165}.product strong{font-size:8px;letter-spacing:1px;color:#987544}footer{padding:28px 7%;display:flex;justify-content:space-between;background:#171914;color:#d9d1c2;font-size:8px;letter-spacing:2px}footer a:first-child{font-weight:800;color:#f4eee2}
+@media(max-width:850px){.product-grid{grid-template-columns:repeat(2,1fr)}.site-header nav{gap:13px}}@media(max-width:620px){.site-header{height:82px;padding:8px 14px}.brand img{width:175px;max-height:62px}.site-header nav{display:none}.nav-cta{font-size:8px;padding:12px}.country-hero{padding:70px 7%}.country-hero h1{font-size:48px}.chapter-intro{padding:48px 7%}.chapter-intro h2,.section-head h2{font-size:23px}.garments{padding:50px 5%}.product-art{height:190px}footer{flex-wrap:wrap;gap:14px;padding:25px 5%}}
 </style>
-
-</body>
-</html>
-<style>
-.topline{height:30px;background:#b79b6c;color:#171914;display:grid;place-items:center;font-size:8px;letter-spacing:2px;font-weight:700}
-.header{height:108px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff20}
-.logo{display:flex;align-items:center}.brand-image{display:block;width:290px;height:auto;max-height:96px;object-fit:contain;mix-blend-mode:multiply;filter:contrast(1.55) saturate(1.25) brightness(.78) drop-shadow(0 3px 2px #8b765333);transition:transform .2s ease}.brand-image:hover{transform:scale(1.025)}
-.header nav{display:flex;gap:30px;font-size:8px;letter-spacing:1.8px;color:#d1cdc3}
-.breadcrumbs{padding:25px 7%;display:flex;gap:12px;font-size:8px;letter-spacing:1.5px;color:#aaa69c}.breadcrumbs span:last-child{color:#c7ad81}
-.product-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(340px,.9fr);gap:7%;padding:25px 7% 100px;max-width:1600px;margin:auto}
-.main-image{height:min(760px,70vw);min-height:480px;background:#282a23}.main-image img{width:100%;height:100%;object-fit:cover;display:block}.image-note{font-size:8px;letter-spacing:2px;color:#9e998d;padding-top:15px}
-.product-copy{padding:35px 0}.eyebrow{font-size:8px;letter-spacing:2.5px;color:#c7ad81}.product-copy h1{font:clamp(42px,5vw,70px)/1 Georgia,serif;letter-spacing:-2px;margin:20px 0}.price{font-size:16px;color:#c7ad81}.description{font:17px/1.7 Georgia,serif;color:#c9c4b9;max-width:510px;margin:25px 0 30px}.rule{height:1px;background:#ffffff30;margin:27px 0}.design-placement{display:flex;flex-direction:column;gap:8px;padding:16px 18px;background:#e7dfd1;border-left:3px solid #b79b6c;color:#514a3e;font-size:9px;letter-spacing:1px}.design-placement strong{color:#8d7042;font-size:9px;letter-spacing:1.7px}.design-placement span{line-height:1.5}.option-row{display:flex;justify-content:space-between;gap:15px;font-size:8px;letter-spacing:1.5px;color:#aaa69c}.option-row strong{color:#e9e5dc;letter-spacing:0;font-size:11px}.muted{letter-spacing:0;text-align:right;font-size:10px}.swatch{display:flex;align-items:center;gap:10px;margin:15px 0 28px;font-size:11px;color:#d2cec4}.swatch span{width:21px;height:21px;border-radius:50%;background:#eeeae1;border:1px solid #aaa69c}
-.swatch-brotherhood-hoodie span,.swatch-field-crew span{background:#777b7c}.swatch-field-crew span{background:#171914}.size-list{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin:15px 0 27px}.size-list span{border:1px solid #ffffff35;text-align:center;padding:13px 0;font-size:10px;color:#aaa69c}
-.notify-button{display:flex;justify-content:space-between;align-items:center;background:#c7ad81;color:#171914;padding:19px 20px;font-size:9px;font-weight:700;letter-spacing:1.8px}.notify-button b{font-size:16px}.availability{font-size:8px;letter-spacing:1.5px;color:#c7ad81;margin:25px 0 9px}.availability span{margin-right:7px}.availability-copy{font:13px/1.7 Georgia,serif;color:#aaa69c;margin:0}.details-heading{font:20px Georgia,serif}.product-copy ul{padding-left:18px;color:#c5c0b5;font:13px/2 Georgia,serif}.back-link{margin-top:35px;font-size:8px;letter-spacing:1.5px;color:#c7ad81}
-.more{background:#e9e5dc;color:#171914;padding:75px 7% 90px}.more .eyebrow{color:#8d7650}.more h2{font:clamp(30px,4vw,48px) Georgia,serif;margin:12px 0 30px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.related-card{display:flex;flex-direction:column;gap:10px}.related-card img{width:100%;height:290px;object-fit:cover}.related-card span{font-size:8px;letter-spacing:1.5px;color:#8d7650;text-transform:uppercase}.related-card strong{font:20px Georgia,serif}
-footer{padding:28px 7%;display:flex;justify-content:space-between;border-top:1px solid #ffffff20;color:#aaa69c;font-size:8px;letter-spacing:1.5px}footer a:first-child{color:#e9e5dc;font-weight:800}
-@media(max-width:800px){.product-layout{grid-template-columns:1fr;gap:20px;padding:15px 6% 70px}.main-image{height:110vw;min-height:0;max-height:650px}.product-copy{padding:10px 0}.related-card img{height:220px}}
-@media(max-width:520px){.header{padding:0 5%;height:72px}.brand-image{width:220px;max-height:76px}.header nav{gap:12px;font-size:7px}.breadcrumbs{padding:20px 5%;font-size:7px}.related-grid{grid-template-columns:1fr 1fr;gap:15px}.related-card img{height:190px}.related-card strong{font-size:16px}footer{padding:25px 5%;font-size:7px}}
-
-/* Light product detail presentation */
-body{background:#eeeae1;color:#24251f}
-.header{background:#eeeae1;border-bottom:1px solid #d5cdbf}
-.header nav{color:#39382f}
-.breadcrumbs{color:#777165}
-.breadcrumbs span:last-child{color:#8d7042}
-.product-layout{background:#eeeae1}
-.main-image{background:#ded8cc}
-.image-note{color:#777165}
-.product-copy .eyebrow{color:#8d7042}
-.product-copy h1{color:#24251f}
-.price{color:#8d7042}
-.description{color:#5f5b52}.design-placement{background:#e7dfd1;color:#514a3e}.design-placement strong{color:#8d7042}
-.rule{background:#d0c8b9}
-.option-row{color:#716b60}
-.option-row strong{color:#292820}
-.muted{color:#777165}
-.swatch{color:#4f4b43}
-.swatch span{border-color:#aaa18f}
-.swatch-brotherhood-hoodie span{background:#777b7c}
-.swatch-field-crew span{background:#171914}
-.size-list span{border-color:#c9c0b1;color:#49463e;background:#f5f2eb}
-.notify-button{background:#b79b6c;color:#191a16}
-.availability{color:#8d7042}
-.availability-copy{color:#6f6a60}
-.details-heading{color:#24251f}
-.product-copy ul{color:#625d53}
-.back-link{color:#8d7042}
-.more{background:#e4ded2;color:#24251f}
-.more .eyebrow{color:#8d7042}
-.related-card span{color:#8d7042}
-.related-card strong{color:#24251f}
-footer{background:#20211c;border-color:#393a32;color:#c3bdae}
-footer a:first-child{color:#f0ece2}
-
-
-/* Product header matches the master AirBorneSoldier identity */
-.header{height:142px!important;min-height:142px!important;background:#171914!important;border-bottom:1px solid #8f7549!important;padding:14px clamp(24px,7vw,100px)!important}
-.header .logo{display:flex;align-items:center}
-.header .brand-image{display:block;width:370px!important;max-width:38vw;height:auto!important;max-height:118px!important;object-fit:contain;mix-blend-mode:normal!important;filter:none!important;transition:transform .2s ease}
-.header .brand-image:hover{transform:scale(1.02)}
-.header nav,.header nav a{color:#eeeae1!important}
-@media(max-width:760px){.header{height:112px!important;min-height:112px!important;padding:10px 18px!important}.header .brand-image{width:250px!important;max-width:62vw!important;max-height:88px!important}}
-
-
-.header{height:186px!important;min-height:186px!important;padding:10px clamp(24px,5.5vw,90px)!important;background:#f2eee5!important;border-bottom:1px solid #d6c9b2!important}
-.header .logo{width:420px!important;max-width:34vw!important;flex:0 0 420px!important;display:flex;align-items:center}
-.header .brand-image{width:100%!important;max-height:166px!important;object-fit:contain!important;mix-blend-mode:normal!important;filter:contrast(1.65) brightness(.86) saturate(1.25)!important}
-.header nav,.header nav a{color:#171914!important}
-@media(max-width:900px){.header{height:auto!important;min-height:140px!important;padding:12px 4%!important;flex-wrap:wrap!important}.header .logo{flex:0 0 300px!important;width:300px!important;max-width:48vw!important}.header .brand-image{max-height:115px!important}}
-@media(max-width:620px){.header{height:112px!important;min-height:112px!important;flex-wrap:nowrap!important;padding:8px 14px!important}.header .logo{width:220px!important;max-width:58vw!important;flex:0 0 220px!important}.header .brand-image{max-height:90px!important}}
-
-
-/* Logo treatment: transparent outside, solid metallic artwork, no rectangular backing. */
-.brand-image{display:block;object-fit:contain!important;mix-blend-mode:normal!important;filter:none!important;opacity:1!important}
-</style>
-
-<style>
-/* Match homepage masthead and keep product previews clearly provisional */
-.topline{height:38px!important;display:flex!important;align-items:center;justify-content:center;gap:18px;background:#b89b69!important;color:#171914!important;font-size:10px!important;letter-spacing:2.5px!important}
-.topline span{color:#171914}
-.header{height:140px!important;min-height:140px!important;padding:8px clamp(24px,5.5vw,86px)!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:24px!important;background:#f4f0e8!important;border-bottom:1px solid #d9d0c1!important}
-.header .logo{width:auto!important;max-width:none!important;flex:0 1 390px!important;min-width:230px!important}
-.header .brand-image{width:100%!important;max-width:390px!important;max-height:126px!important;object-fit:contain!important;mix-blend-mode:normal!important;filter:drop-shadow(0 2px 2px #4b3a1b22)!important}
-.header nav{display:flex!important;align-items:center!important;justify-content:center!important;gap:clamp(16px,2.5vw,36px)!important;color:#171914!important;font-size:11px!important;letter-spacing:1px!important}
-.header nav a{color:#171914!important;font-size:11px!important;font-weight:700!important;white-space:nowrap}
-.header-cta{display:inline-flex;align-items:center;gap:14px;white-space:nowrap;padding:13px 16px;border:1px solid #9b7130;background:linear-gradient(110deg,#f0d69a,#c69b50);color:#171914;font-size:9px;font-weight:800;letter-spacing:1px}
-@media(max-width:900px){.header{height:auto!important;min-height:112px!important;padding:8px 4%!important;gap:12px!important}.header .logo{flex:0 1 270px!important;min-width:160px!important}.header .brand-image{max-height:100px!important}.header nav{gap:12px!important}.header nav a{font-size:9px!important}.header-cta{font-size:8px;padding:10px}}
-@media(max-width:650px){.topline{height:34px!important;font-size:7px!important;letter-spacing:1.4px!important;gap:8px!important}.header{height:100px!important;min-height:100px!important;padding:6px 12px!important;flex-wrap:nowrap!important}.header .logo{flex:0 1 190px!important;min-width:0!important}.header .brand-image{max-height:86px!important}.header nav{display:none!important}.header-cta{margin-left:auto;font-size:7px;padding:10px 8px;gap:7px}.product-layout{padding-top:12px!important}.main-image{min-height:0!important;height:105vw!important}}
-@media(max-width:390px){.header .logo{flex-basis:160px!important}.header-cta{font-size:6px;padding:9px 6px}}
-</style>
-<style>
-/* Consistent cream-and-gold AirBorneSoldier storefront */
-.topline{height:40px!important;background:linear-gradient(90deg,#b28a4b,#d5b77f,#b28a4b)!important;color:#171914!important}
-.header{height:142px!important;min-height:142px!important;padding:8px clamp(28px,5vw,78px)!important;background:#f8f4ec!important;border-bottom:1px solid #d5c8b3!important}
-.header .logo{flex:0 1 390px!important;min-width:220px!important}
-.header .brand-image{width:100%!important;max-width:390px!important;max-height:136px!important;filter:drop-shadow(0 2px 2px #4b3a1b22)!important}
-.header nav,.header nav a{color:#171914!important}
-.header-cta{background:linear-gradient(110deg,#e6c47e,#b88a3e)!important;border:1px solid #d4a64d!important;color:#171914!important;padding:14px 18px!important;font-size:9px!important}
-.breadcrumbs{background:#f7f2e9!important;color:#756b59!important}
-.product-layout{background:#f7f2e9!important}
-.main-image{background:#d8d0c2!important}
-.product-copy h1{color:#171914!important}
-.price,.product-copy .eyebrow{color:#98703a!important}
-.notify-button{background:linear-gradient(110deg,#e6c47e,#b88a3e)!important;border:1px solid #d4a64d!important;color:#171914!important;box-shadow:0 4px 14px #6e4b1b22!important}
-.size-list span{border-color:#c9bda9!important;color:#292820!important}
-.more{background:#eee8dc!important}
-.related-card img{filter:saturate(.9)!important}
-@media(max-width:760px){.topline{height:34px!important;font-size:7px!important}.header{height:98px!important;min-height:98px!important;padding:6px 12px!important}.header .logo{max-width:210px!important;min-width:0!important}.header .brand-image{max-height:84px!important}.header nav{display:none!important}.header-cta{font-size:7px!important;padding:10px 8px!important}.product-layout{padding:18px 5% 60px!important}}
-</style>
+</body></html>
