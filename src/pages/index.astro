@@ -2,10 +2,10 @@
 import "../styles/global.css";
 
 const categories = [
-  { name: "HOODIES", note: "Layers for the brotherhood", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=88", number: "01" },
-  { name: "T-SHIRTS", note: "The everyday standard", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=88", number: "02" },
-  { name: "CAPS", note: "The finishing mark", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=1200&q=88", number: "03" },
-  { name: "JACKETS", note: "Built for the elements", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1200&q=88", number: "04" }
+  { name: "HOODIES", note: "Layers for the brotherhood", image: "https://images.unsplash.com/photo-1620532393942-ceb8baf5f8a0?auto=format&fit=crop&w=1200&q=88", number: "01" },
+  { name: "T-SHIRTS", note: "The everyday standard", image: "https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?auto=format&fit=crop&w=1200&q=88", number: "02" },
+  { name: "CAPS", note: "The finishing mark", image: "https://images.unsplash.com/photo-1544435253-f0ead49638fa?auto=format&fit=crop&w=1200&q=88", number: "03" },
+  { name: "JACKETS", note: "Built for the elements", image: "https://images.unsplash.com/photo-1524860363694-645e3377427d?auto=format&fit=crop&w=1200&q=88", number: "04" }
 ];
 const logo = "https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw25su/c14fa22d-dcdf-4531-ac68-c193884954df.png";
 ---
@@ -74,7 +74,6 @@ const logo = "https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw
           <a class={`category-card category-card--${category.number}`} href="/collection/">
             <img class="category-photo" src={category.image} alt={category.name + " apparel preview"} loading="lazy" />
             <span class="category-shade"></span>
-            <img class="category-brand" src={logo} alt="" aria-hidden="true" />
             <span class="category-number">{category.number}</span>
             <span class="category-caption"><span><b>{category.name}</b><small>{category.note}</small></span><strong>→</strong></span>
           </a>
@@ -294,4 +293,26 @@ a{color:inherit;text-decoration:none}
  .category-brand{max-height:76px}
  .category-caption b{font-size:13px}
 }
+</style>
+
+<style>
+/* Category photography refresh: real apparel imagery, no inaccurate AI logo overlays */
+.category-brand{display:none!important}
+.category-card{height:clamp(250px,23vw,340px)!important}
+.category-photo{object-fit:cover!important;filter:saturate(.86) contrast(1.08)!important}
+.category-card--01 .category-photo{object-position:center 38%!important}
+.category-card--02 .category-photo{object-position:center 35%!important}
+.category-card--03 .category-photo{object-position:center 42%!important}
+.category-card--04 .category-photo{object-position:center 36%!important}
+.category-shade{background:linear-gradient(180deg,rgba(10,12,12,.02) 12%,rgba(10,12,12,.04) 45%,rgba(10,12,12,.78) 100%)!important}
+.category-caption{left:20px!important;right:18px!important;bottom:18px!important}
+@media(max-width:760px){
+ .category-card{height:auto!important;aspect-ratio: .78!important}
+ .category-caption{left:12px!important;right:12px!important;bottom:13px!important}
+ .category-caption b{font-size:14px!important;letter-spacing:1.2px!important}
+ .category-caption small{font-size:9px!important}
+ .category-caption strong{font-size:28px!important}
+ .category-photo{object-position:center center!important}
+}
+@media(max-width:390px){.category-card{aspect-ratio:.76!important}}
 </style>
