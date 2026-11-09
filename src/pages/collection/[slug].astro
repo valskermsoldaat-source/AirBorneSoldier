@@ -35,7 +35,8 @@ const related = products.filter((item) => item.slug !== product.slug).slice(0, 3
         <p class="eyebrow">{product.flag} {product.country.toUpperCase()} · {product.label}</p>
         <h1>{product.name}</h1>
         <p class="price">{product.price}</p>
-        <p class="description">{product.description}</p>\n        <div class="design-placement"><strong>THE DESIGN APPROACH</strong><span>FRONT CHEST / SHOULDER · AIRBORNESOLDIER MAKER’S MARK</span><span>BACK · COUNTRY AIRBORNE HERITAGE ARTWORK</span></div>
+        <p class="description">{product.description}</p>
+        <div class="design-placement"><strong>THE DESIGN APPROACH</strong><span>FRONT CHEST / SHOULDER · AIRBORNESOLDIER MAKER’S MARK</span><span>BACK · COUNTRY AIRBORNE HERITAGE ARTWORK</span></div>
         <div class="rule"></div>
         <div class="option-row"><span>COLOUR</span><strong>{product.colour}</strong></div>
         <div class={"swatch swatch-" + product.slug} aria-label={"Colour: " + product.colour}><span></span>{product.colour}</div>
