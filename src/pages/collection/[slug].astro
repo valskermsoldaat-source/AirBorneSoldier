@@ -21,7 +21,7 @@ const related = products.filter((item) => item.slug !== product.slug).slice(0, 3
 <body>
   <div class="topline">THE SKY BROTHERHOOD — BUILT ON BELONGING</div>
   <header class="header">
-    <a class="logo" href="/" aria-label="AirBorneSoldier home"><img class="brand-image" src="/images/airbornesoldier-logo.jpg?v=2" alt="AirBorneSoldier — The Sky Brotherhood" /></a>
+    <a class="logo" href="/" aria-label="AirBorneSoldier home"><img class="brand-image" src="/images/airbornesoldier-logo.webp" alt="AirBorneSoldier — The Sky Brotherhood" /></a>
     <nav><a href="/">HOME</a><a href="/collection/">COLLECTION</a><a href="mailto:valskermsoldaat@gmail.com">CONTACT ↗</a></nav>
   </header>
   <main>
@@ -128,4 +128,7 @@ footer a:first-child{color:#f0ece2}
 @media(max-width:900px){.header{height:auto!important;min-height:140px!important;padding:12px 4%!important;flex-wrap:wrap!important}.header .logo{flex:0 0 300px!important;width:300px!important;max-width:48vw!important}.header .brand-image{max-height:115px!important}}
 @media(max-width:620px){.header{height:112px!important;min-height:112px!important;flex-wrap:nowrap!important;padding:8px 14px!important}.header .logo{width:220px!important;max-width:58vw!important;flex:0 0 220px!important}.header .brand-image{max-height:90px!important}}
 
+
+/* Logo treatment: transparent outside, solid metallic artwork, no rectangular backing. */
+.brand-image{display:block;object-fit:contain!important;mix-blend-mode:normal!important;filter:drop-shadow(0 2px 4px rgba(0,0,0,.48))!important;opacity:1!important}
 </style>

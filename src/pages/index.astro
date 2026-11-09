@@ -19,7 +19,7 @@ const values = [
 <body>
 <div class="announcement">THE SKY BROTHERHOOD — BUILT ON BELONGING <span>✳</span> UK · EUROPE · USA</div>
 <header class="site-header">
-<a class="wordmark" href="/" aria-label="AirBorneSoldier home"><img class="brand-image" src="/images/airbornesoldier-logo.jpg?v=2" alt="AirBorneSoldier — The Sky Brotherhood" /></a>
+<a class="wordmark" href="/" aria-label="AirBorneSoldier home"><img class="brand-image" src="/images/airbornesoldier-logo.webp" alt="AirBorneSoldier — The Sky Brotherhood" /></a>
 <nav class="desktop-nav" aria-label="Main navigation"><a href="/collection/">Collection</a><a href="#philosophy">Our code</a><a href="#story">The brotherhood</a></nav>
 <a class="header-cta" href="mailto:valskermsoldaat@gmail.com?subject=AirBorneSoldier%20early%20access">GET EARLY ACCESS <span>↗</span></a>
 </header>
@@ -126,4 +126,7 @@ const values = [
 .benefit-strip strong{font-size:15px;letter-spacing:.2px}
 .benefit-strip p{font:14px/1.4 Arial,sans-serif;margin:5px 0 0;color:#49443b}
 @media(max-width:760px){.benefit-strip{grid-template-columns:1fr 1fr;gap:20px 0;padding:26px 4%}.benefit-strip>div:nth-child(2){border:0}.benefit-strip>div{padding-left:55px;padding-right:12px}.benefit-icon{font-size:32px;left:5px}.benefit-strip strong{font-size:11px}.benefit-strip p{font-size:11px}}
+
+/* Logo treatment: transparent outside, solid metallic artwork, no rectangular backing. */
+.brand-image{display:block;object-fit:contain!important;mix-blend-mode:normal!important;filter:drop-shadow(0 2px 4px rgba(0,0,0,.48))!important;opacity:1!important}
 </style>

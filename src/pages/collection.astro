@@ -7,7 +7,7 @@ import { products as pieces } from "../data/products";
 <html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="Explore the AirBorneSoldier Sky Brotherhood collection. Premium heritage streetwear." /><meta name="theme-color" content="#171914" /><title>Collection — AirBorneSoldier®</title></head>
 <body>
 <div class="topline">THE SKY BROTHERHOOD — BUILT ON BELONGING</div>
-<header class="header"><a class="logo" href="/" aria-label="AirBorneSoldier home"><img class="brand-image" src="/images/airbornesoldier-logo.jpg?v=2" alt="AirBorneSoldier — The Sky Brotherhood" /></a><nav><a href="/">HOME</a><a href="/collection/" aria-current="page">COLLECTION</a><a href="mailto:valskermsoldaat@gmail.com">CONTACT ↗</a></nav></header>
+<header class="header"><a class="logo" href="/" aria-label="AirBorneSoldier home"><img class="brand-image" src="/images/airbornesoldier-logo.webp" alt="AirBorneSoldier — The Sky Brotherhood" /></a><nav><a href="/">HOME</a><a href="/collection/" aria-current="page">COLLECTION</a><a href="mailto:valskermsoldaat@gmail.com">CONTACT ↗</a></nav></header>
 <main><section class="collection-hero"><p class="eyebrow">CHAPTER 01 · THE FOUNDATIONS</p><h1>THE<br /><em>COLLECTION.</em></h1><p>Considered essentials. Heritage spirit.<br />The first pieces of the Sky Brotherhood.</p></section>
 <section class="catalogue"><div class="catalogue-heading"><span>THE FIRST EDITION</span><span>04 PIECES / UK · EUROPE · USA</span></div>
 <div class="catalogue-grid">{pieces.map((piece,i)=><article class="piece"><a href={"/collection/" + piece.slug + "/"} class="piece-image" aria-label={"View " + piece.name}><img src={piece.image} alt={piece.name} loading="lazy" /><span>{piece.label}</span><b>0{i+1}</b></a><div class="piece-meta"><div><small>{piece.category}</small><h2>{piece.name}</h2><p>{piece.description}</p></div><strong>{piece.price}</strong></div><a class="enquire" href={"/collection/" + piece.slug + "/"}>VIEW PIECE DETAILS <span>↗</span></a></article>)}</div>
@@ -65,4 +65,7 @@ footer a:first-child{color:#f0ece2}
 @media(max-width:900px){.header{height:auto!important;min-height:140px!important;padding:12px 4%!important;flex-wrap:wrap!important}.header .logo{flex:0 0 300px!important;width:300px!important;max-width:48vw!important}.header .brand-image{max-height:115px!important}}
 @media(max-width:620px){.header{height:112px!important;min-height:112px!important;flex-wrap:nowrap!important;padding:8px 14px!important}.header .logo{width:220px!important;max-width:58vw!important;flex:0 0 220px!important}.header .brand-image{max-height:90px!important}}
 
+
+/* Logo treatment: transparent outside, solid metallic artwork, no rectangular backing. */
+.brand-image{display:block;object-fit:contain!important;mix-blend-mode:normal!important;filter:drop-shadow(0 2px 4px rgba(0,0,0,.48))!important;opacity:1!important}
 </style>
