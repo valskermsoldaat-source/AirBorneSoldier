@@ -7,8 +7,8 @@ export const products = [
     label: "CORE PIECE",
     description: "A considered everyday essential. Clean lines, a relaxed silhouette and a quiet expression of the Sky Brotherhood.",
     details: ["Everyday relaxed profile", "Minimal heritage-inspired styling", "Designed as a versatile foundation piece"],
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1400&q=90",
-    colour: "White"
+    image: "https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?auto=format&fit=crop&w=1400&q=90",
+    colour: "Olive Green"
   },
   {
     slug: "brotherhood-hoodie",
@@ -18,8 +18,8 @@ export const products = [
     label: "SIGNATURE",
     description: "A substantial layer for the hours between destinations. Understated, comfortable and made to become part of the everyday uniform.",
     details: ["Layering essential", "Understated Sky Brotherhood identity", "A considered everyday silhouette"],
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1400&q=90",
-    colour: "Heather Grey"
+    image: "https://images.unsplash.com/photo-1620532393942-ceb8baf5f8a0?auto=format&fit=crop&w=1400&q=90",
+    colour: "Black"
   },
   {
     slug: "field-crew",
@@ -40,7 +40,7 @@ export const products = [
     label: "ACCESSORY",
     description: "The finishing detail. A simple mark, worn your way. An understated accessory for the Sky Brotherhood.",
     details: ["Everyday accessory", "Minimal heritage-inspired styling", "Easy to wear"],
-    image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=1400&q=90",
-    colour: "White"
+    image: "https://images.unsplash.com/photo-1544435253-f0ead49638fa?auto=format&fit=crop&w=1400&q=90",
+    colour: "Black"
   }
 ] as const;
