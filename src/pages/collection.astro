@@ -13,6 +13,38 @@ import { products as pieces } from "../data/products";
 <div class="catalogue-grid">{pieces.map((piece,i)=><article class="piece"><a href={"/collection/" + piece.slug + "/"} class="piece-image" aria-label={"View " + piece.name}><img src={piece.image} alt={piece.name} loading="lazy" /><img class="piece-brand-mark" src="https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw25su/c14fa22d-dcdf-4531-ac68-c193884954df.png" alt="" aria-hidden="true" /><span>{piece.flag} {piece.label}</span><b>0{i+1}</b></a><div class="piece-meta"><div><small>{piece.country} · {piece.category}</small><h2>{piece.name}</h2><p>{piece.description}</p></div><strong>{piece.price}</strong></div><a class="enquire" href={"/collection/" + piece.slug + "/"}>VIEW PIECE DETAILS <span>↗</span></a></article>)}</div>
 <div class="availability"><span>✳</span><div><strong>FIVE COUNTRY COLLECTIONS · FIRST CHAPTER PREVIEW.</strong><p>Each chapter pairs a discreet AirBorneSoldier maker’s mark on the front chest or shoulder with country-specific airborne heritage artwork as the main design. Product photographs, artwork, specifications and pricing are previews; official military insignia will only be used where commercial permission is confirmed.</p></div></div>
 </section></main><footer><a href="/">AIRBORNESOLDIER®</a><span>SKY BROTHERHOOD</span><a href="mailto:valskermsoldaat@gmail.com">CONTACT ↗</a></footer>
+
+<style>
+/* Master charcoal-and-antique-gold collection presentation */
+body{background:#171914!important;color:#f3eee3!important}
+.topline{background:#171914!important;color:#e4c486!important;border-bottom:1px solid #92703d!important}
+.header{background:#171914!important;border-bottom:1px solid #8b6d3b!important}
+.header nav,.header nav a{color:#eee8dc!important}
+.brand-image{mix-blend-mode:normal!important;filter:none!important}
+.header-cta{background:linear-gradient(110deg,#e5c783,#b58a45)!important;border-color:#e4c783!important}
+.collection-hero{background:linear-gradient(90deg,rgba(9,12,11,.88),rgba(9,12,11,.55)),url("https://media.defense.gov/2009/May/12/2001996945/1088/820/0/712156-Q-NRH68-499.jpg") center 42%/cover!important;color:#f6f0e5!important}
+.collection-hero .eyebrow{color:#e2bd77!important}
+.collection-hero h1{color:#fff!important}
+.collection-hero h1 em{color:#e0b96f!important}
+.collection-hero>p:last-child{color:#e6dfd2!important}
+.country-index{color:#ead8b4!important}
+.catalogue{background:#171914!important;color:#f3eee3!important}
+.catalogue-heading{color:#d0ad70!important;border-color:#655438!important}
+.piece-image{border:1px solid #a98248!important;background:#292c24!important}
+.piece-image img:first-child{filter:saturate(.8) contrast(1.05)!important}
+.piece-meta small,.piece-meta>strong{color:#d0ad70!important}
+.piece-meta h2{color:#f3eee3!important}
+.piece-meta p{color:#c5bcad!important}
+.enquire{border-color:#80623a!important;color:#f0e5cf!important}
+.enquire span{color:#d0ad70!important}
+.availability{background:#252720!important;border-left:3px solid #b88a3e!important;color:#eee8dc!important}
+.availability strong{color:#e5c783!important}
+.availability p{color:#c5bcad!important}
+footer{background:#10120f!important;border-color:#80623a!important;color:#d7d0c4!important}
+footer a:first-child{color:#f0ece2!important}
+@media(max-width:650px){.header{background:#171914!important}.collection-hero{background-position:55% center!important}}
+</style>
+
 </body></html>
 <style>
 .topline{height:30px;background:#b79b6c;color:#171914;display:grid;place-items:center;font-size:8px;letter-spacing:2px;font-weight:700}.header{height:108px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff20}.logo{display:flex;align-items:center}.brand-image{display:block;width:290px;height:auto;max-height:96px;object-fit:contain;mix-blend-mode:multiply;filter:contrast(1.55) saturate(1.25) brightness(.78) drop-shadow(0 3px 2px #8b765333);transition:transform .2s ease}.brand-image:hover{transform:scale(1.025)}.header nav{display:flex;gap:30px;font-size:8px;letter-spacing:1.8px;color:#d1cdc3}.header nav a[aria-current="page"]{color:#c7ad81}
