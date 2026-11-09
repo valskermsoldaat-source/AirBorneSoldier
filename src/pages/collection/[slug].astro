@@ -21,7 +21,7 @@ const related = products.filter((item) => item.slug !== product.slug).slice(0, 3
 <body>
   <div class="topline">THE SKY BROTHERHOOD — BUILT ON BELONGING</div>
   <header class="header">
-    <a class="logo" href="/" aria-label="AirBorneSoldier home"><img class="brand-image" src="/images/airbornesoldier-logo.svg" alt="AirBorneSoldier — The Sky Brotherhood" /></a>
+    <a class="logo" href="/" aria-label="AirBorneSoldier home"><img class="brand-image" src="https://d2ol7oe51mr4n9.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw25su/c14fa22d-dcdf-4531-ac68-c193884954df.png" alt="AirBorneSoldier — The Sky Brotherhood" /></a>
     <nav><a href="/">HOME</a><a href="/collection/">COLLECTION</a><a href="mailto:valskermsoldaat@gmail.com">CONTACT ↗</a></nav>
   </header>
   <main>
@@ -115,7 +115,7 @@ footer a:first-child{color:#f0ece2}
 /* Product header matches the master AirBorneSoldier identity */
 .header{height:142px!important;min-height:142px!important;background:#171914!important;border-bottom:1px solid #8f7549!important;padding:14px clamp(24px,7vw,100px)!important}
 .header .logo{display:flex;align-items:center}
-.header .brand-image{display:block;width:370px!important;max-width:38vw;height:auto!important;max-height:118px!important;object-fit:contain;mix-blend-mode:screen!important;filter:contrast(1.2) brightness(1.1) saturate(1.05)!important;transition:transform .2s ease}
+.header .brand-image{display:block;width:370px!important;max-width:38vw;height:auto!important;max-height:118px!important;object-fit:contain;mix-blend-mode:normal!important;filter:none!important;transition:transform .2s ease}
 .header .brand-image:hover{transform:scale(1.02)}
 .header nav,.header nav a{color:#eeeae1!important}
 @media(max-width:760px){.header{height:112px!important;min-height:112px!important;padding:10px 18px!important}.header .brand-image{width:250px!important;max-width:62vw!important;max-height:88px!important}}
@@ -123,12 +123,12 @@ footer a:first-child{color:#f0ece2}
 
 .header{height:186px!important;min-height:186px!important;padding:10px clamp(24px,5.5vw,90px)!important;background:#f2eee5!important;border-bottom:1px solid #d6c9b2!important}
 .header .logo{width:420px!important;max-width:34vw!important;flex:0 0 420px!important;display:flex;align-items:center}
-.header .brand-image{width:100%!important;max-height:166px!important;object-fit:contain!important;mix-blend-mode:screen!important;filter:contrast(1.65) brightness(.86) saturate(1.25)!important}
+.header .brand-image{width:100%!important;max-height:166px!important;object-fit:contain!important;mix-blend-mode:normal!important;filter:contrast(1.65) brightness(.86) saturate(1.25)!important}
 .header nav,.header nav a{color:#171914!important}
 @media(max-width:900px){.header{height:auto!important;min-height:140px!important;padding:12px 4%!important;flex-wrap:wrap!important}.header .logo{flex:0 0 300px!important;width:300px!important;max-width:48vw!important}.header .brand-image{max-height:115px!important}}
 @media(max-width:620px){.header{height:112px!important;min-height:112px!important;flex-wrap:nowrap!important;padding:8px 14px!important}.header .logo{width:220px!important;max-width:58vw!important;flex:0 0 220px!important}.header .brand-image{max-height:90px!important}}
 
 
 /* Logo treatment: transparent outside, solid metallic artwork, no rectangular backing. */
-.brand-image{display:block;object-fit:contain!important;mix-blend-mode:normal!important;filter:drop-shadow(0 2px 4px rgba(0,0,0,.48))!important;opacity:1!important}
+.brand-image{display:block;object-fit:contain!important;mix-blend-mode:normal!important;filter:none!important;opacity:1!important}
 </style>
